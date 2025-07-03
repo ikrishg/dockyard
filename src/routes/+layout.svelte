@@ -1,10 +1,13 @@
 <script lang="ts">
   import "$/app.css";
+  import Dock from "$/lib/components/Dock.svelte";
+  import Menubar from "$/lib/components/Menubar.svelte";
 
   let { children } = $props();
 </script>
 
-<header></header>
+<Menubar />
 <main>
   {@render children()}
 </main>
+<Dock />
