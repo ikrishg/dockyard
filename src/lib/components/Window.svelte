@@ -9,7 +9,8 @@
     "window absolute max-w-max max-h-max min-w-2xs left-1/2 top-1/2 -translate-1/2",
     className
   )}
-  data-active="false"
+  style="opacity: 0; transform: scale(0);"
+  data-active="true"
   data-name={name}
 >
   <header>
