@@ -8,7 +8,9 @@ const config = {
   // for more information about preprocessors
   preprocess: [vitePreprocess(), mdsvex()],
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: "404.html",
+    }),
     alias: {
       $: "src",
     },

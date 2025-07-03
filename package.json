@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "packageManager": "bun@1.2.17",
+  "engines": {
+    "bun": ">=1.2.0"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
