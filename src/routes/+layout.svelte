@@ -4,6 +4,9 @@
   import Menubar from "$/lib/components/Menubar.svelte";
 
   let { children } = $props();
+
+  export const prerender = true;
+  export const ssr = false;
 </script>
 
 <Menubar />

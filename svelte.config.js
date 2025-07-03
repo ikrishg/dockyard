@@ -9,6 +9,9 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex()],
   kit: {
     adapter: adapter({
+      pages: "build",
+      assets: "build",
+      precompress: true,
       fallback: "404.html",
     }),
     alias: {
