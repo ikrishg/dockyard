@@ -1,31 +1,16 @@
 <script lang="ts">
   import clsx from "clsx";
-  import gsap from "gsap";
-  import { Draggable } from "gsap/Draggable";
 
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    gsap.registerPlugin(Draggable);
-
-    const windowElement = document.querySelector(".window");
-
-    if (windowElement) {
-      Draggable.create(windowElement, {
-        bounds: document.querySelector("html"),
-        trigger: windowElement.querySelector("header"),
-      });
-    }
-  });
-
-  const { className, children } = $props();
+  const { name, className, children } = $props();
 </script>
 
 <section
   class={clsx(
-    "window absolute left-1/2 top-1/2 -translate-1/2 max-w-max max-h-max min-w-2xs",
+    "window absolute max-w-max max-h-max min-w-2xs left-1/2 top-1/2 -translate-1/2",
     className
   )}
+  data-active="false"
+  data-name={name}
 >
   <header>
     <div
@@ -34,21 +19,21 @@
       <div class="flex items-center space-x-2">
         <button
           aria-label="Close Window"
-          class="w-3 h-3 bg-red-500 rounded-full"
+          class="minimize-button w-3 h-3 bg-red-500 rounded-full"
         ></button>
         <button
           aria-label="Minimize Window"
-          class="w-3 h-3 bg-yellow-500 rounded-full"
+          class="minimize-button w-3 h-3 bg-yellow-500 rounded-full"
         ></button>
         <button
           aria-label="Maximize Window"
-          class="w-3 h-3 bg-green-500 rounded-full"
+          class="maximize-button w-3 h-3 bg-green-500 rounded-full"
         ></button>
       </div>
     </div>
   </header>
 
-  <main class="p-5">
+  <main class="p-5 max-h-[50vh] overflow-y-scroll">
     {@render children()}
   </main>
 </section>

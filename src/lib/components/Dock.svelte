@@ -1,17 +1,6 @@
 <script>
   import clsx from "clsx";
-
-  import finderImage from "$/assets/finder.png";
-  import musicImage from "$/assets/music.png";
-  import settingsImage from "$/assets/settings.png";
-  import xcodeImage from "$/assets/xcode.png";
-
-  const items = [
-    { name: "Finder", image: finderImage },
-    { name: "Music", image: musicImage },
-    { name: "Settings", image: settingsImage },
-    { name: "Xcode", image: xcodeImage },
-  ];
+  import { apps, open } from "$/config/apps.svelte";
 </script>
 
 <nav
@@ -19,7 +8,8 @@
     "flex items-center w-max min-w-xs min-h-16 rounded-3xl",
     "px-5",
     "fixed left-0 right-0 bottom-2 mx-auto",
-    "bg-white/10 backdrop-blur-[67px]"
+    "bg-white/10 backdrop-blur-[67px]",
+    "z-[99999]"
   )}
 >
   <ul
@@ -28,10 +18,10 @@
       "*:hover:scale-125 *:hover:-translate-y-2.5 *:transition-transform"
     )}
   >
-    {#each items as item}
+    {#each apps as app}
       <li>
-        <button>
-          <img src={item.image} alt={item.name} width={50} height={50} />
+        <button onclick={() => open(app.name)}>
+          <img src={app.icon} alt={app.title} width={50} height={50} />
         </button>
       </li>
     {/each}

@@ -2,7 +2,7 @@
   import Window from "./Window.svelte";
 </script>
 
-<Window className="bg-white/70 backdrop-blur-[67px]">
+<Window name="xcode" className="bg-white/70 backdrop-blur-[67px]">
   <article class="prose prose-zinc space-y-1">
     <p>This website has been built by:</p>
     <h1>Krish Gupta</h1>

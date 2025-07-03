@@ -3,15 +3,26 @@
 @plugin "@tailwindcss/forms";
 
 :root {
-  @apply bg-neutral-950 text-neutral-50 min-h-screen bg-cover bg-center;
-
+  @apply bg-neutral-950 text-neutral-50 bg-cover bg-center;
   background-image: url("$/assets/wallpaper.jpg");
-
   cursor: url("$/assets/cursors/Default.svg"), auto;
+
+  @apply **:scroll-smooth;
 }
 
-a[href],
-button {
+body > div {
+  @apply min-h-screen;
+  @apply flex flex-col;
+
+  main {
+    @apply flex-1;
+  }
+}
+
+a,
+button,
+input,
+select {
   cursor: url("$/assets/cursors/Click.svg"), pointer;
 }
 
@@ -23,4 +34,7 @@ button {
   @apply rounded-lg bg-blend-multiply;
   box-shadow: 0px 36px 100px 0px rgba(0, 0, 0, 0.4),
     0px 0px 3px 0px rgba(0, 0, 0, 0.55);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000;
 }
