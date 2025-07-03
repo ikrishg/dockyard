@@ -40,7 +40,6 @@
     "vite-plugin-devtools-json": "^0.2.0"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.50.3",
     "gsap": "^3.13.0"
   }
 }
