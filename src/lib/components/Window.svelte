@@ -10,7 +10,7 @@
     className
   )}
   style="opacity: 0; transform: scale(0);"
-  data-active="true"
+  data-active="false"
   data-name={name}
 >
   <header>
