@@ -131,9 +131,6 @@
         );
       }
     );
-
-    // open default apps
-    open("finder");
   });
 </script>
 

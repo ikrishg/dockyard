@@ -51,12 +51,12 @@
 
 <Window
   name="finder"
-  className="bg-zinc-50 overflow-hidden text-zinc-900 backdrop-blur-[67px] border border-zinc-200"
+  className="bg-white/80 backdrop-blur-[67px] overflow-hidden text-zinc-900 border"
 >
   {#if !isLoading}
     <div class="flex flex-col h-full" in:fade>
       <!-- Mobile Status Filter Toolbar -->
-      <div class="block lg:hidden bg-white border-b border-zinc-200 px-4 py-2">
+      <div class="block lg:hidden border-b border-zinc-200 px-4 py-2">
         <div class="flex items-center gap-2">
           <span class="text-sm text-zinc-600 font-medium">Status:</span>
           {#each statuses as status, index}
@@ -83,8 +83,9 @@
 
       <!-- Desktop Layout with Sidebar -->
       <div class="flex flex-1 overflow-hidden">
-        <div
-          class="hidden lg:block w-48 bg-zinc-50 border-r border-zinc-200 p-2 max-h-[50vh] overflow-y-scroll flex-shrink-0"
+        <aside
+          class="hidden lg:block w-48 border-r border-zinc-200 p-2 overflow-y-scroll flex-shrink-0"
+          style="box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);"
         >
           <div class="space-y-1">
             <div
@@ -112,18 +113,18 @@
               </button>
             {/each}
           </div>
-        </div>
+        </aside>
 
         <!-- Main Content Area -->
         <div
-          class="flex-1 flex flex-col min-w-0 max-h-[70vh] overflow-y-scroll"
+          class="bg-zinc-50 flex-1 flex flex-col min-w-0 max-h-[70vh] overflow-y-scroll"
         >
           <div
-            class="flex-1 bg-white"
+            class="flex-1"
             in:fly={{ y: 20, duration: 400, delay: 200, easing: cubicOut }}
           >
             <table class="w-full">
-              <thead class="bg-white border-b border-zinc-200 sticky top-0">
+              <thead class="border-b bg-zinc-50 border-zinc-200 sticky top-0">
                 <tr>
                   <th
                     class="text-left px-4 py-2 text-xs font-medium text-zinc-600 uppercase tracking-wider w-full"
@@ -141,7 +142,7 @@
               <tbody>
                 {#each filteredData as ysws, index (ysws.name)}
                   <tr
-                    class="border-b border-zinc-50 hover:bg-zinc-50 transition-colors cursor-pointer"
+                    class="border-b border-zinc-50 hover:bg-zinc-200 transition-colors"
                     in:fly={{
                       y: 20,
                       duration: 400,
