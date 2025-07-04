@@ -17,7 +17,8 @@
 </script>
 
 <Window name="music" className="bg-white/70 backdrop-blur-[67px]">
-  <article class="prose prose-zinc space-y-1"></article>
-  <div id="embed-iframe"></div>
+  <div class="p-5">
+    <div id="embed-iframe"></div>
+  </div>
   <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 </Window>

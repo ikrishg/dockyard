@@ -37,4 +37,14 @@ select {
   will-change: transform, opacity;
   backface-visibility: hidden;
   perspective: 1000;
+  z-index: 1000;
+}
+
+.window[data-active="false"] {
+  user-select: none;
+  pointer-events: none;
+}
+
+.window[data-focus="true"] {
+  z-index: 9999999999999;
 }

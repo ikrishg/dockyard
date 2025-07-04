@@ -3,7 +3,7 @@
 </script>
 
 <Window name="xcode" className="bg-white/70 backdrop-blur-[67px]">
-  <article class="prose prose-zinc space-y-1">
+  <article class="prose p-5 prose-zinc space-y-1 max-w-[50vh]">
     <p>This website has been built by:</p>
     <h1>Krish Gupta</h1>
     <p>

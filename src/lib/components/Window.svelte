@@ -6,12 +6,13 @@
 
 <section
   class={clsx(
-    "window absolute max-w-max max-h-max min-w-2xs left-1/2 top-1/2 -translate-1/2",
+    "window absolute max-w-max max-h-max min-w-xs left-1/2 top-1/2 -translate-1/2",
     className
   )}
   style="opacity: 0; transform: scale(0);"
   data-active="false"
   data-name={name}
+  data-focus="false"
 >
   <header>
     <div
@@ -34,7 +35,7 @@
     </div>
   </header>
 
-  <main class="p-5 max-h-[50vh] overflow-y-scroll">
+  <main class="max-h-[70vh] overflow-y-scroll">
     {@render children()}
   </main>
 </section>

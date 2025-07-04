@@ -1,6 +1,6 @@
 <script lang="ts">
   import "$/app.css";
-  import { apps, minimize, type App } from "$/config/apps.svelte";
+  import { apps, minimize, open, type App } from "$/config/apps.svelte";
   import Dock from "$/lib/components/Dock.svelte";
   import Menubar from "$/lib/components/Menubar.svelte";
 
@@ -55,20 +55,34 @@
           };
         }
       ) => {
-        document
-          .querySelector(`.window[data-name="${event.detail.name}"]`)
-          ?.setAttribute("data-active", "true");
-
-        gsap.to(
-          document.querySelector(`.window[data-name="${event.detail.name}"]`),
-          {
-            duration: 0.5,
-            scale: 1,
-            opacity: 1,
-            y: "0%",
-            ease: "power2.out",
-          }
+        const windowElement = document.querySelector(
+          `.window[data-name="${event.detail.name}"]`
         );
+
+        const alreadyOpen =
+          windowElement?.getAttribute("data-active") === "true";
+
+        document.body.setAttribute("data-focus-window", event.detail.name);
+        document.body.querySelectorAll(".window").forEach((el) => {
+          if (el.getAttribute("data-focus") !== "false") {
+            el.setAttribute("data-focus", "false");
+          }
+        });
+        windowElement?.setAttribute("data-focus", "true");
+
+        if (alreadyOpen) {
+          return;
+        }
+
+        windowElement?.setAttribute("data-active", "true");
+
+        gsap.to(windowElement, {
+          duration: 0.5,
+          scale: 1,
+          opacity: 1,
+          y: "0%",
+          ease: "power2.out",
+        });
 
         document
           .querySelector(`.dock-item[data-name="${event.detail.name}"]`)
@@ -86,7 +100,6 @@
           "data-active-windows",
           activeWindows.join(",")
         );
-        document.body.setAttribute("data-focus-window", event.detail.name);
         document
           .querySelector(`.window[data-name="${event.detail.name}"]`)
           ?.focus();
@@ -118,6 +131,9 @@
         );
       }
     );
+
+    // open default apps
+    open("finder");
   });
 </script>
 
