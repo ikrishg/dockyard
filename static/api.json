@@ -8,6 +8,14 @@
     "deadline": "2025-07-16T23:59:59-04:00"
   },
   {
+    "name": "Toolsmith",
+    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
+    "website": "https://toolsmith.hackclub.com",
+    "slack": "https://hackclub.slack.com/archives/C094X38BFT5",
+    "status": "active",
+    "deadline": "2025-07-11T23:59:59-04:00"
+  },
+  {
     "name": "Cider",
     "description": "Create an iOS app and receive a $100 Apple Developer account to publish it.",
     "website": "https://cider.hackclub.com/",

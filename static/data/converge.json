@@ -1,8 +1,20 @@
 {
   "name": "Converge",
+  "draft": false,
   "description": "Build bots, win prizes",
-  "website": "https://converge.hackclub.com",
-  "slack": "https://hackclub.slack.com/archives/C091UF79VDM",
-  "status": "active",
-  "deadline": "2025-07-15T23:59:59-04:00"
+  "ys": "Discord/Slack/Telegram/Signal Bot",
+  "ws": "Multiple Prizes",
+  "extern": {
+    "website": "https://converge.hackclub.com",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C091UF79VDM",
+      "name": "converge"
+    }
+  },
+  "timeline": [
+    {
+      "start": "",
+      "end": "2025-07-15T23:59:59-04:00"
+    }
+  ]
 }
