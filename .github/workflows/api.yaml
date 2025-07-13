@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
   schedule:
     - cron: "0 0 * * *" # Every day at midnight UTC
 
@@ -26,12 +27,15 @@ jobs:
         run: bun run build:api
 
       - name: Run the Action
+        if: ${{ github.event_name != 'pull_request' }}
         uses: devops-infra/action-commit-push@master
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
           commit_message: "chore: update API build [skip ci]"
           target_branch: api-build-${{ github.run_id }}
       - name: Create PR and Merge
+        if: ${{ github.event_name != 'pull_request' }}
+
         run: |
           gh pr create --base main --head api-build-${{ github.run_id }} --title "API Build Update" --body "Automated API build update."
           gh pr merge --auto --squash --delete-branch
