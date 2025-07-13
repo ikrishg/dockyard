@@ -1,6 +1,4 @@
 <script lang="ts">
-  export const prerender = true;
-
   import "$/app.css";
   import { apps, minimize, open, type App } from "$/lib/config/apps.svelte";
   import Dock from "$/lib/components/Dock.svelte";
