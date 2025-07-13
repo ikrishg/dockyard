@@ -4,6 +4,7 @@
 
 :root {
   @apply bg-neutral-950 text-neutral-50 bg-cover bg-center;
+  background-image: url("$/assets/wallpaper-blur.jpg");
   background-image: url("$/assets/wallpaper.jpg");
   cursor: url("$/assets/cursors/Default.svg"), auto;
 
