@@ -35,24 +35,28 @@ function makeAPIData(id, content) {
   };
 }
 
-const yswsDir = path.join(process.cwd(), "static", "data");
+const yswsDir = path.join(process.cwd(), "api", "data");
 
 const files = fs
   .readdirSync(yswsDir)
   .filter((file) => file.endsWith(".json"))
   .map((file) => file.replace(".json", ""));
 
-const ysws = files.map((file) => {
-  const filePath = path.join(yswsDir, `${file}.json`);
-  const content = fs.readFileSync(filePath, "utf-8");
+const ysws = files
+  .map((file) => {
+    const filePath = path.join(yswsDir, `${file}.json`);
+    const content = fs.readFileSync(filePath, "utf-8");
 
-  console.log(`Making data for ${file}.json...`);
+    console.log(`Making data for ${file}.json...`);
 
-  return makeAPIData(file, JSON.parse(content));
-});
+    return makeAPIData(file, JSON.parse(content));
+  })
+  .sort((a, b) => {
+    return new Date(a.start).getTime() - new Date(b.start).getTime();
+  });
 
-const apiFilePath = path.join(process.cwd(), "static", "api.json");
+const apiFilePath = path.join(process.cwd(), "api", "data.json");
 
-fs.writeFileSync(apiFilePath, JSON.stringify(ysws, null, 2), "utf-8");
+fs.writeFileSync(apiFilePath, JSON.stringify(ysws, null, 2) + "\n", "utf-8");
 
 console.log(`API file created at ${apiFilePath}`);

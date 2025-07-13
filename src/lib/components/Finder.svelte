@@ -23,7 +23,7 @@
 
   onMount(() => {
     const url = apiBaseUrl;
-    url.pathname = "/api.json";
+    url.pathname = "/data.json";
 
     fetch(url.toString())
       .then((response) => response.json())
