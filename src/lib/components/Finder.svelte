@@ -4,11 +4,20 @@
   import { flip } from "svelte/animate";
   import { cubicOut } from "svelte/easing";
   import Window from "./Window.svelte";
-  import { statuses, type status, type YSWS } from "$/config/ysws";
+  import {
+    statuses,
+    types,
+    type Status,
+    type Type,
+    type YSWS,
+  } from "$/lib/config/ysws";
   import clsx from "clsx";
 
   let data = $state<YSWS[]>([]);
-  let selectedStatus = $state<status>("active");
+  let selectedStatus = $state<Status>("active");
+  let selectedType = $state<Type>("ysws");
+  let selectedDateSort = $state<"asc" | "desc">("asc");
+  let allowDraft = $state<boolean>(false);
   let isLoading = $state(true);
 
   onMount(() => {
@@ -30,8 +39,12 @@
   const filteredData = $derived(
     data
       .filter((item) => item.status === selectedStatus)
+      .filter((item) => item.type === selectedType)
+      .filter((item) => (allowDraft ? true : !item.draft))
       .sort((a, b) => {
-        return new Date(a.deadline).getTime() - new Date(b.deadline).getTime();
+        const sortUtil = new Date(a.end).getTime() - new Date(b.end).getTime();
+
+        return selectedDateSort === "asc" ? sortUtil : -sortUtil;
       })
   );
 
@@ -56,28 +69,78 @@
   {#if !isLoading}
     <div class="flex flex-col h-full" in:fade>
       <!-- Mobile Status Filter Toolbar -->
-      <div class="block lg:hidden border-b border-zinc-200 px-4 py-2">
-        <div class="flex items-center gap-2">
+      <div class="block space-y-2 lg:hidden border-b border-zinc-200 px-4 py-2">
+        <div class="flex justify-between items-center gap-2">
+          <span class="text-sm text-zinc-600 font-medium">Type:</span>
+          <div class="space-x-2">
+            {#each types as dataType, index}
+              <button
+                class={clsx(
+                  "px-3 py-1 text-sm rounded transition-colors",
+                  selectedType === dataType
+                    ? "bg-zinc-200 text-zinc-950"
+                    : "text-zinc-700 hover:bg-zinc-100 border border-zinc-200"
+                )}
+                onclick={() => (selectedType = dataType)}
+                in:fly={{
+                  x: -20,
+                  duration: 300,
+                  delay: index * 100,
+                  easing: cubicOut,
+                }}
+              >
+                {dataType[0].toUpperCase() + dataType.slice(1)}
+              </button>
+            {/each}
+          </div>
+        </div>
+        <div class="flex justify-between items-center gap-2">
           <span class="text-sm text-zinc-600 font-medium">Status:</span>
-          {#each statuses as status, index}
-            <button
-              class={clsx(
-                "px-3 py-1 text-sm rounded transition-colors",
-                selectedStatus === status
-                  ? "bg-zinc-200 text-zinc-950"
-                  : "text-zinc-700 hover:bg-zinc-100 border border-zinc-200"
-              )}
-              onclick={() => (selectedStatus = status)}
-              in:fly={{
-                x: -20,
-                duration: 300,
-                delay: index * 100,
-                easing: cubicOut,
-              }}
-            >
-              {status[0].toUpperCase() + status.slice(1)}
-            </button>
-          {/each}
+          <div class="space-x-2">
+            {#each statuses as status, index}
+              <button
+                class={clsx(
+                  "px-3 py-1 text-sm rounded transition-colors",
+                  selectedStatus === status
+                    ? "bg-zinc-200 text-zinc-950"
+                    : "text-zinc-700 hover:bg-zinc-100 border border-zinc-200"
+                )}
+                onclick={() => (selectedStatus = status)}
+                in:fly={{
+                  x: -20,
+                  duration: 300,
+                  delay: index * 100,
+                  easing: cubicOut,
+                }}
+              >
+                {status[0].toUpperCase() + status.slice(1)}
+              </button>
+            {/each}
+          </div>
+        </div>
+        <div class="flex justify-between items-center gap-2">
+          <span class="text-sm text-zinc-600 font-medium">Sort:</span>
+          <div class="space-x-2">
+            {#each ["asc", "desc"] as dateSort, index}
+              <button
+                class={clsx(
+                  "px-3 py-1 text-sm rounded transition-colors",
+                  selectedDateSort === dateSort
+                    ? "bg-zinc-200 text-zinc-950"
+                    : "text-zinc-700 hover:bg-zinc-100 border border-zinc-200"
+                )}
+                onclick={() => (selectedDateSort = dateSort as "asc" | "desc")}
+                in:fly={{
+                  x: -20,
+                  duration: 300,
+                  delay: index * 100,
+                  easing: cubicOut,
+                }}
+              >
+                {dateSort[0].toUpperCase() + dateSort.slice(1)}
+              </button>
+            {/each}
+          </div>
         </div>
       </div>
 
@@ -87,6 +150,32 @@
           class="hidden lg:block w-48 border-r border-zinc-200 p-2 overflow-y-scroll flex-shrink-0"
           style="box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);"
         >
+          <div class="space-y-1">
+            <div
+              class="text-xs font-medium text-zinc-500 uppercase tracking-wider px-2 py-1"
+            >
+              Type
+            </div>
+            {#each types as dataType, index}
+              <button
+                class={clsx(
+                  "w-full text-left px-2 py-1 text-sm rounded transition-colors",
+                  selectedType === dataType
+                    ? "bg-zinc-200 text-zinc-950"
+                    : "text-zinc-700 hover:bg-zinc-200"
+                )}
+                onclick={() => (selectedType = dataType)}
+                in:fly={{
+                  x: -20,
+                  duration: 300,
+                  delay: index * 100,
+                  easing: cubicOut,
+                }}
+              >
+                {dataType[0].toUpperCase() + dataType.slice(1)}
+              </button>
+            {/each}
+          </div>
           <div class="space-y-1">
             <div
               class="text-xs font-medium text-zinc-500 uppercase tracking-wider px-2 py-1"
@@ -110,6 +199,32 @@
                 }}
               >
                 {status[0].toUpperCase() + status.slice(1)}
+              </button>
+            {/each}
+          </div>
+          <div class="space-y-1">
+            <div
+              class="text-xs font-medium text-zinc-500 uppercase tracking-wider px-2 py-1"
+            >
+              Sort
+            </div>
+            {#each ["asc", "desc"] as dateSort, index}
+              <button
+                class={clsx(
+                  "w-full text-left px-2 py-1 text-sm rounded transition-colors",
+                  selectedDateSort === dateSort
+                    ? "bg-zinc-200 text-zinc-950"
+                    : "text-zinc-700 hover:bg-zinc-200"
+                )}
+                onclick={() => (selectedDateSort = dateSort as "asc" | "desc")}
+                in:fly={{
+                  x: -20,
+                  duration: 300,
+                  delay: index * 100,
+                  easing: cubicOut,
+                }}
+              >
+                {dateSort[0].toUpperCase() + dateSort.slice(1)}
               </button>
             {/each}
           </div>
@@ -163,7 +278,7 @@
 
                     <td class="px-4 py-3 text-right align-top">
                       <span class="text-sm text-zinc-700">
-                        {dateFormatter(new Date(ysws.deadline))}
+                        {dateFormatter(new Date(ysws.end))}
                       </span>
                     </td>
                   </tr>

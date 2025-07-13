@@ -1,6 +1,6 @@
 <script>
   import clsx from "clsx";
-  import { apps, open } from "$/config/apps.svelte";
+  import { apps, open } from "$/lib/config/apps.svelte";
 </script>
 
 <nav

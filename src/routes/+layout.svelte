@@ -1,6 +1,6 @@
 <script lang="ts">
   import "$/app.css";
-  import { apps, minimize, open, type App } from "$/config/apps.svelte";
+  import { apps, minimize, open, type App } from "$/lib/config/apps.svelte";
   import Dock from "$/lib/components/Dock.svelte";
   import Menubar from "$/lib/components/Menubar.svelte";
 

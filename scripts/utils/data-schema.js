@@ -1,5 +1,9 @@
 import zod from "zod";
 
+const DateString = zod.string().refine((val) => !isNaN(Date.parse(val)), {
+  message: "Invalid date format",
+});
+
 const dataSchema = zod.object({
   name: zod.string(),
   type: zod.enum(["flagship", "ysws"]),
@@ -10,14 +14,14 @@ const dataSchema = zod.object({
   extern: zod.object({
     website: zod.url().or(zod.null()),
     slack: zod.object({
-      link: zod.url({ hostname: "hackclub.slack.com" }),
+      link: zod.url(),
       name: zod.string(),
     }),
   }),
   timeline: zod.array(
     zod.object({
-      start: zod.date(),
-      end: zod.date(),
+      start: DateString,
+      end: DateString,
     })
   ),
 });
