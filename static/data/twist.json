@@ -1,8 +1,21 @@
 {
   "name": "Twist",
+  "type": "ysws",
+  "draft": false,
   "description": "Make an esolang, get stickers and a $40 electronics grant.",
-  "website": "https://twist.hackclub.dev",
-  "slack": "https://hackclub.slack.com/archives/C092A93FA4X",
-  "status": "active",
-  "deadline": "2025-07-14T23:59:59-04:00"
+  "ys": "An esolang",
+  "ws": "Stickers and a $40 electronics grant",
+  "extern": {
+    "website": "https://twist.hackclub.dev",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C092A93FA4X",
+      "name": "twist-ysws"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-25T00:00:00-04:00",
+      "end": "2025-07-14T23:59:59-04:00"
+    }
+  ]
 }

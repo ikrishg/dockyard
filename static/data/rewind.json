@@ -1,8 +1,25 @@
 {
   "name": "Rewind",
-  "description": "Build a desktop app, Get stickers, artifacts + a framed Windows XP image!",
-  "website": "https://rewind.hackclub.com/",
-  "slack": "https://hackclub.slack.com/archives/C093ALFAW8K",
-  "status": "active",
-  "deadline": "2025-07-08T23:59:59-04:00"
+  "type": "ysws",
+  "draft": false,
+  "description": "Build a desktop app, Get stickers, artifacts + Headphones!",
+  "ys": "A Desktop App",
+  "ws": "Stickers, artifacts + super cool headphones from KOSS!",
+  "extern": {
+    "website": "http://rewind.hackclub.com",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C093ALFAW8K",
+      "name": "rewind"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-07-12T00:00:00-04:00",
+      "end": "2025-08-12T23:59:59-04:00"
+    },
+    {
+      "start": "2025-06-28T00:00:00-04:00",
+      "end": "2025-07-08T23:59:59-04:00"
+    }
+  ]
 }

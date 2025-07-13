@@ -1,8 +1,21 @@
 {
   "name": "Thunder",
+  "type": "ysws",
+  "draft": false,
   "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
-  "website": null,
-  "slack": "https://hackclub.slack.com/archives/C06V2GEV3MY",
-  "status": "active",
-  "deadline": "2025-07-15T23:59:59-04:00"
+  "ys": "A Slack bot",
+  "ws": "A limited edition Orpheus bucket hat",
+  "extern": {
+    "website": null,
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C06V2GEV3MY",
+      "name": "thunder"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-05-16T00:00:00-04:00",
+      "end": "2025-07-15T23:59:59-04:00"
+    }
+  ]
 }

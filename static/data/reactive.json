@@ -1,8 +1,21 @@
 {
   "name": "Reactive",
+  "type": "ysws",
+  "draft": false,
   "description": "Ship a website built with React, get $15 to buy a domain.",
-  "website": "http://reactive.hackclub.dev",
-  "slack": "https://hackclub.slack.com/archives/C090S7Q2HT4",
-  "status": "active",
-  "deadline": "2025-07-04T23:59:59-04:00"
+  "ys": "A website built with React",
+  "ws": "$15 to buy a domain",
+  "extern": {
+    "website": "http://reactive.hackclub.dev",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C090S7Q2HT4",
+      "name": "reactive"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-20T00:00:00-04:00",
+      "end": "2025-07-05T23:59:59-04:00"
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { dataSchema } from "./utils/data-schema";
 
 const yswsDir = path.join(process.cwd(), "static", "data");
 
@@ -11,7 +12,10 @@ const files = fs
 const ysws = files.map((file) => {
   const filePath = path.join(yswsDir, `${file}.json`);
   const content = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(content);
+
+  const data = dataSchema.parse(JSON.parse(content));
+
+  return data;
 });
 
 const apiFilePath = path.join(process.cwd(), "static", "api.json");

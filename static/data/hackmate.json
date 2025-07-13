@@ -1,8 +1,21 @@
 {
   "name": "Hackmate",
+  "type": "ysws",
+  "draft": false,
   "description": "Build a collaborative app, ship it, and get rewarded with cloud credits/raspberry pi!",
-  "website": "https://hackmate.hackclub.dev/",
-  "slack": "https://hackclub.slack.com/archives/C092HR1LG20",
-  "status": "active",
-  "deadline": "2025-07-15T23:59:59-04:00"
+  "ys": "A Collaborative App",
+  "ws": "Cloud Credits/Raspberry Pi",
+  "extern": {
+    "website": "https://hackmate.hackclub.dev",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C092HR1LG20",
+      "name": "hackmate"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-25T00:00:00-04:00",
+      "end": "2025-07-15T23:59:59-04:00"
+    }
+  ]
 }

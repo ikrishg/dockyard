@@ -1,8 +1,21 @@
 {
   "name": "Gamefolio",
+  "type": "ysws",
+  "draft": false,
   "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
-  "website": "https://gamefolio.hackclub.dev/",
-  "slack": "https://hackclub.slack.com/archives/C08RT4C2485",
-  "status": "active",
-  "deadline": "2025-07-15T23:59:59-04:00"
+  "ys": "A portfolio site with a game theme",
+  "ws": "$20 grant for domains or hosting",
+  "extern": {
+    "website": "https://gamefolio.hackclub.dev",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C08RT4C2485",
+      "name": "gamefolio"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-25T00:00:00-04:00",
+      "end": "2025-07-15T23:59:59-04:00"
+    }
+  ]
 }

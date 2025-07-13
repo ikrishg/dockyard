@@ -1,8 +1,21 @@
 {
   "name": "Anansi",
+  "type": "ysws",
+  "draft": false,
   "description": "Build a web scraper, upload your dataset to Kaggle, Get a comic book!",
-  "website": "https://anansi.hackclub.com/",
-  "slack": "https://hackclub.slack.com/archives/C094J1QDU72",
-  "status": "active",
-  "deadline": "2025-07-04T23:59:59-04:00"
+  "ys": "A Web Scraper",
+  "ws": "A comic book!",
+  "extern": {
+    "website": "https://anansi.hackclub.com",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C094J1QDU72",
+      "name": "anansi"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-07-02T00:00:00-04:00",
+      "end": "2025-07-04T23:59:59-04:00"
+    }
+  ]
 }

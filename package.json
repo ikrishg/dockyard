@@ -41,6 +41,7 @@
     "vite-plugin-devtools-json": "0.2.1"
   },
   "dependencies": {
-    "gsap": "^3.13.0"
+    "gsap": "^3.13.0",
+    "zod": "^4.0.5"
   }
 }

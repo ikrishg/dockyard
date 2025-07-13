@@ -1,5 +1,6 @@
 {
   "name": "Extensify",
+  "type": "ysws",
   "draft": false,
   "description": "Build an IDE extension, get a keychain or anything from a selection of other prizes.",
   "ys": "an IDE Extension",

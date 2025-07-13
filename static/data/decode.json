@@ -1,8 +1,21 @@
 {
   "name": "Decode",
+  "type": "ysws",
+  "draft": false,
   "description": "Learn how a tech product works (hardware + software) and we ship you a grant to make it yourself!",
-  "website": "https://decode.hackclub.dev",
-  "slack": "https://hackclub.slack.com/archives/C091GPYCAFL",
-  "status": "active",
-  "deadline": "2025-07-09T23:59:59-04:00"
+  "ys": "Understanding of a tech product",
+  "ws": "A grant to make it yourself!",
+  "extern": {
+    "website": "https://decode.hackclub.dev",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C091GPYCAFL",
+      "name": "decode"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-24T00:00:00-04:00",
+      "end": "2025-07-09T23:59:59-04:00"
+    }
+  ]
 }

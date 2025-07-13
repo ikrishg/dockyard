@@ -1,8 +1,21 @@
 {
   "name": "Pulse",
+  "type": "ysws",
+  "draft": false,
   "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
-  "website": "https://pulse.hackclub.dev/",
-  "slack": "https://hackclub.slack.com/archives/C090E7XUEA3",
-  "status": "active",
-  "deadline": "2025-07-08T23:59:59-04:00"
+  "ys": "A project using the Spotify API",
+  "ws": "3 months of Spotify Premium",
+  "extern": {
+    "website": "https://pulse.hackclub.dev",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
+      "name": "pulse-ysws"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-25T00:00:00-04:00",
+      "end": "2025-07-11T23:59:59-04:00"
+    }
+  ]
 }

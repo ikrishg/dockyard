@@ -1,8 +1,21 @@
 {
   "name": "Reinforced",
+  "type": "ysws",
+  "draft": false,
   "description": "Build a game, build a bot to beat it, get compute to do more AI stuff.",
-  "website": "https://reinforced.hackclub.dev/",
-  "slack": "https://hackclub.slack.com/archives/C092JUZ7V7Y",
-  "status": "active",
-  "deadline": "2025-07-16T23:59:59-04:00"
+  "ys": "A game and a bot to beat it",
+  "ws": "AI Credits to do more AI stuff",
+  "extern": {
+    "website": "http://reinforced.hackclub.dev",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C092JUZ7V7Y",
+      "name": "reactive"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-25T00:00:00-04:00",
+      "end": "2025-07-16T23:59:59-04:00"
+    }
+  ]
 }

@@ -1,8 +1,21 @@
 {
   "name": "Illumination",
-  "description": "You Ship: a program that runs on an ESP32, a backend that connects to your ESP32, and a website to control your ESP32 and backend.\nWe Ship: a cool ESP32-S3 based devboard, hardware parts you choose, and cloud credits to run your backend with.",
-  "website": "https://illumination.hackclub.com/",
-  "slack": "https://hackclub.slack.com/archives/C091MS57D37",
-  "status": "active",
-  "deadline": "2025-07-10T23:59:59-04:00"
+  "type": "ysws",
+  "draft": false,
+  "description": "Build an IOT device, get everything you need to have it running!",
+  "ys": "A program that runs on an ESP32, a backend that connects to your ESP32, and a website to control your ESP32 and backend.",
+  "ws": "A cool ESP32-S3 based devboard, hardware parts you choose, and cloud credits to run your backend with.",
+  "extern": {
+    "website": "https://illumination.hackclub.com",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C091MS57D37",
+      "name": "illumination"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-25T00:00:00-04:00",
+      "end": "2025-07-10T23:59:59-04:00"
+    }
+  ]
 }

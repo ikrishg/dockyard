@@ -1,8 +1,21 @@
 {
   "name": "Dockerize",
+  "type": "ysws",
+  "draft": false,
   "description": "Build a self-hosted application using Docker, we ship you stickers and a chance to win a ZimaBoard.",
-  "website": "https://dockerize.hackclub.com/",
-  "slack": "https://hackclub.slack.com/archives/C092D9HARSQ",
-  "status": "active",
-  "deadline": "2025-07-11T23:59:59-04:00"
+  "ys": "A Dockerized Application",
+  "ws": "Stickers and a chance to win a ZimaBoard.",
+  "extern": {
+    "website": "https://dockerize.hackclub.com/",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C092D9HARSQ",
+      "name": "dockerize"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-06-20T00:00:00-04:00",
+      "end": "2025-07-11T23:59:59-04:00"
+    }
+  ]
 }
