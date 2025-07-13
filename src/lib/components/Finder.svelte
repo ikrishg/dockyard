@@ -12,6 +12,7 @@
     type YSWS,
   } from "$/lib/config/ysws";
   import clsx from "clsx";
+  import { apiBaseUrl } from "../config/api";
 
   let data = $state<YSWS[]>([]);
   let selectedStatus = $state<Status>("active");
@@ -21,7 +22,7 @@
   let isLoading = $state(true);
 
   onMount(() => {
-    const url = new URL(window.location.href);
+    const url = apiBaseUrl;
     url.pathname = "/api.json";
 
     fetch(url.toString())
