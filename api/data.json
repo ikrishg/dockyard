@@ -154,7 +154,7 @@
   {
     "name": "Twist",
     "id": "twist",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Make an esolang, get stickers and a $40 electronics grant.",
