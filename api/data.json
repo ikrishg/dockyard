@@ -2,7 +2,7 @@
   {
     "name": "Thunder",
     "id": "thunder",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
@@ -135,7 +135,7 @@
   {
     "name": "Converge",
     "id": "converge",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Build bots, win prizes",
@@ -173,7 +173,7 @@
   {
     "name": "Gamefolio",
     "id": "gamefolio",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
@@ -192,7 +192,7 @@
   {
     "name": "Hackmate",
     "id": "hackmate",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Build a collaborative app, ship it, and get rewarded with cloud credits/raspberry pi!",
