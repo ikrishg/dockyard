@@ -211,7 +211,7 @@
   {
     "name": "Reinforced",
     "id": "reinforced",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Build a game, build a bot to beat it, get compute to do more AI stuff.",
