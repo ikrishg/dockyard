@@ -15,7 +15,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint .",
-    "build:api": "bun run scripts/build-api.js"
+    "build:api": "bun run scripts/build-api.ts"
   },
   "devDependencies": {
     "@eslint/compat": "1.3.1",
