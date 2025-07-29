@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the program.",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of the program. 'flagship' for flagship programs, 'ysws' for YSWS programs.",
+      "type": "string",
+      "enum": [
+        "flagship",
+        "ysws"
+      ]
+    },
+    "draft": {
+      "description": "Whether the program is in draft mode. If true, it will not be displayed on the website.",
+      "type": "boolean"
+    },
+    "description": {
+      "description": "A brief tagline or description of the program.",
+      "type": "string"
+    },
+    "ys": {
+      "description": "The YS (Your Ship) of the program, which is the work or input.",
+      "type": "string"
+    },
+    "ws": {
+      "description": "The WS (We Ship) of the program, which is the reward or outcome.",
+      "type": "string"
+    },
+    "extern": {
+      "type": "object",
+      "properties": {
+        "website": {
+          "description": "The website link for the program. Can be null if not applicable.",
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "slack": {
+          "description": "The Slack link and name for the program.",
+          "type": "object",
+          "properties": {
+            "link": {
+              "description": "The Slack link for the program. This is the link to the channel.",
+              "type": "string",
+              "format": "uri"
+            },
+            "name": {
+              "description": "Slack channel name without the # prefix.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "link",
+            "name"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "website",
+        "slack"
+      ],
+      "additionalProperties": false
+    },
+    "timeline": {
+      "description": "The timelines of the program, with start and end dates. Used in a chart to display the timelines of all YSWS.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "ships": {
+      "description": "An array of ships associated with the program. Each ship has a name, description, URL, and image.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "image": {
+            "description": "Will be used in a masonry grid.",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "url",
+          "image"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "draft",
+    "description",
+    "ys",
+    "ws",
+    "extern",
+    "timeline",
+    "ships"
+  ],
+  "additionalProperties": false
+}

@@ -32,7 +32,9 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build API
-        run: bun run build:api
+        run: |
+          bun run build:json-schema
+          bun run build:api
 
       - name: Run the Action
         if: ${{ github.event_name != 'pull_request' }}

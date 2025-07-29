@@ -76,6 +76,25 @@
     "end": "2025-07-05T23:59:59-04:00"
   },
   {
+    "name": "Summer of Making",
+    "id": "summer-of-making",
+    "status": "active",
+    "type": "flagship",
+    "draft": false,
+    "description": "Build stuff. Get stuff. Repeat.",
+    "ys": "A project of your choice",
+    "ws": "Multiple prizes!!!",
+    "extern": {
+      "website": "http://summer.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C015M4L9AHW",
+        "name": "summer-of-making"
+      }
+    },
+    "start": "2025-06-21T00:00:00-04:00",
+    "end": "2025-08-31T23:59:59-04:00"
+  },
+  {
     "name": "Silicon",
     "id": "silicon",
     "status": "active",
@@ -93,25 +112,6 @@
     },
     "start": "2025-06-21T00:00:00-04:00",
     "end": "2025-08-06T23:59:59"
-  },
-  {
-    "name": "Summer of Making",
-    "id": "som",
-    "status": "active",
-    "type": "flagship",
-    "draft": false,
-    "description": "Build stuff. Get stuff. Repeat.",
-    "ys": "A project of your choice",
-    "ws": "Multiple prizes!!!",
-    "extern": {
-      "website": "http://summer.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C015M4L9AHW",
-        "name": "summer-of-making"
-      }
-    },
-    "start": "2025-06-21T00:00:00-04:00",
-    "end": "2025-08-31T23:59:59-04:00"
   },
   {
     "name": "Converge",

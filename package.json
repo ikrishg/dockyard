@@ -15,6 +15,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint .",
+    "build:json-schema": "bun run scripts/build-json-schema.ts",
     "build:api": "bun run scripts/build-api.ts"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "@tailwindcss/forms": "0.5.10",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.1.11",
+    "@types/bun": "^1.2.19",
     "clsx": "2.1.1",
     "eslint": "9.31.0",
     "eslint-plugin-svelte": "3.11.0",

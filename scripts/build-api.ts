@@ -1,15 +1,9 @@
-//@ts-check
 import fs from "fs";
 import path from "path";
 import { dataSchema } from "./utils/data-schema";
+import { apiSchema } from "./utils/api-schema";
 
-/**
- *
- * @param {string} id
- * @param {string} content
- * @returns {import('../src/lib/config/ysws').YSWS}
- */
-function makeAPIData(id, content) {
+function makeAPIData(id: string, content: string) {
   const data = dataSchema.parse(content);
 
   const currentTimeline = data.timeline.sort(
@@ -20,10 +14,10 @@ function makeAPIData(id, content) {
     new Date(currentTimeline.start) <= new Date() &&
     new Date(currentTimeline.end) >= new Date();
 
-  return {
+  return apiSchema.element.parse({
     name: data.name,
     id,
-    status: active ? "active" : "inactive",
+    status: active,
     type: data.type,
     draft: data.draft,
     description: data.description,
@@ -32,7 +26,7 @@ function makeAPIData(id, content) {
     extern: data.extern,
     start: currentTimeline.start,
     end: currentTimeline.end,
-  };
+  });
 }
 
 const yswsDir = path.join(process.cwd(), "api", "data");
@@ -51,6 +45,7 @@ const ysws = files
 
     return makeAPIData(file, JSON.parse(content));
   })
+  .filter((data) => data.draft === false)
   .sort((a, b) => {
     return new Date(a.start).getTime() - new Date(b.start).getTime();
   });

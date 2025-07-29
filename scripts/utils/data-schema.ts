@@ -1,29 +1,74 @@
-import zod from "zod";
+import { z } from "zod";
 
-const DateString = zod.string().refine((val) => !isNaN(Date.parse(val)), {
+const DateString = z.string().refine((val) => !isNaN(Date.parse(val)), {
   message: "Invalid date format",
 });
 
-const dataSchema = zod.object({
-  name: zod.string(),
-  type: zod.enum(["flagship", "ysws"]),
-  draft: zod.boolean(),
-  description: zod.string(),
-  ys: zod.string(),
-  ws: zod.string(),
-  extern: zod.object({
-    website: zod.url().or(zod.null()),
-    slack: zod.object({
-      link: zod.url(),
-      name: zod.string(),
-    }),
+const dataSchema = z.object({
+  name: z.string().describe("The name of the program."),
+  type: z
+    .enum(["flagship", "ysws"])
+    .describe(
+      "The type of the program. 'flagship' for flagship programs, 'ysws' for YSWS programs."
+    ),
+  draft: z
+    .boolean()
+    .describe(
+      "Whether the program is in draft mode. If true, it will not be displayed on the website."
+    ),
+  description: z
+    .string()
+    .describe("A brief tagline or description of the program."),
+  ys: z
+    .string()
+    .describe("The YS (Your Ship) of the program, which is the work or input."),
+  ws: z
+    .string()
+    .describe(
+      "The WS (We Ship) of the program, which is the reward or outcome."
+    ),
+  extern: z.object({
+    website: z
+      .url()
+      .or(z.null())
+      .describe(
+        "The website link for the program. Can be null if not applicable."
+      ),
+    slack: z
+      .object({
+        link: z
+          .url()
+          .describe(
+            "The Slack link for the program. This is the link to the channel."
+          ),
+        name: z.string().describe("Slack channel name without the # prefix."),
+      })
+      .describe("The Slack link and name for the program."),
   }),
-  timeline: zod.array(
-    zod.object({
-      start: DateString,
-      end: DateString,
-    })
-  ),
+  timeline: z
+    .array(
+      z.object({
+        start: DateString,
+        end: DateString,
+      })
+    )
+    .describe(
+      "The timelines of the program, with start and end dates. Used in a chart to display the timelines of all YSWS."
+    ),
+  ships: z
+    .array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+        url: z.url(),
+        image: z.url().describe("Will be used in a masonry grid."),
+      })
+    )
+    .optional()
+    .default([])
+    .describe(
+      "An array of ships associated with the program. Each ship has a name, description, URL, and image."
+    ),
 });
 
 export { dataSchema };
