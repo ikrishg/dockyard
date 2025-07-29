@@ -34,6 +34,37 @@
     "slack-name": "channel-name",
     timeline: [{ start: "", end: "" }],
   };
+  // timezone options for timeline entries
+  const timezoneOptions = [
+    "-12:00",
+    "-11:00",
+    "-10:00",
+    "-09:00",
+    "-08:00",
+    "-07:00",
+    "-06:00",
+    "-05:00",
+    "-04:00",
+    "-03:00",
+    "-02:00",
+    "-01:00",
+    "+00:00",
+    "+01:00",
+    "+02:00",
+    "+03:00",
+    "+04:00",
+    "+05:00",
+    "+06:00",
+    "+07:00",
+    "+08:00",
+    "+09:00",
+    "+10:00",
+    "+11:00",
+    "+12:00",
+    "+13:00",
+    "+14:00",
+  ];
+  let timezone = $state<string>("-04:00");
   let formData = $state<IssueData>({ ...blankFormData });
 
   type Field =
@@ -90,9 +121,10 @@
       .then(async (response) => await response.json())
       .then((json: DataItem) => {
         // convert ISO timestamps to date-only strings for date inputs
+        // convert ISO timestamps to datetime-local strings (YYYY-MM-DDTHH:mm)
         const timelineEntries = json.timeline.map((e) => ({
-          start: e.start.split("T")[0],
-          end: e.end.split("T")[0],
+          start: e.start.slice(0, 16),
+          end: e.end.slice(0, 16),
         }));
         formData = issueSchema.parse({
           id,
@@ -132,15 +164,23 @@
       }
     });
 
-    url.searchParams.set(
-      "timeline",
-      JSON.stringify(
-        formData.timeline.map((entry) => ({
-          start: entry.start,
-          end: entry.end,
-        }))
-      )
-    );
+    const formattedTimeline = formData.timeline.map((entry, idx) => {
+      let start = entry.start;
+      let end = entry.end;
+
+      if (!start.includes("T")) {
+        start = `${start}T00:00:00${timezone}`;
+      } else {
+        start = `${start}:00${timezone}`;
+      }
+      if (!end.includes("T")) {
+        end = `${end}T23:59:59${timezone}`;
+      } else {
+        end = `${end}:59${timezone}`;
+      }
+      return { start, end };
+    });
+    url.searchParams.set("timeline", JSON.stringify(formattedTimeline));
 
     window.open(url.toString(), "_blank");
   }
@@ -277,6 +317,22 @@
               for="timeline"
               class="block text-sm text-zinc-300 font-medium">Timeline</label
             >
+            <!-- Timezone selector for timeline entries -->
+            <div class="space-y-2">
+              <label
+                for="timezone"
+                class="block text-sm text-zinc-300 font-medium">Timezone</label
+              >
+              <select
+                id="timezone"
+                bind:value={timezone}
+                class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+              >
+                {#each timezoneOptions as tz}
+                  <option value={tz}>{tz}</option>
+                {/each}
+              </select>
+            </div>
             {#each formData.timeline as entry, index}
               <div
                 class="grid gap-2 items-end"
@@ -289,7 +345,7 @@
                   >
                   <input
                     id="start-{index}"
-                    type="date"
+                    type="datetime-local"
                     bind:value={formData.timeline[index].start}
                     class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
                   />
@@ -300,7 +356,7 @@
                   >
                   <input
                     id="end-{index}"
-                    type="date"
+                    type="datetime-local"
                     bind:value={formData.timeline[index].end}
                     class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
                   />
