@@ -23,8 +23,13 @@ body > div {
 a,
 button,
 input,
-select {
+select,
+.cursor-pointer {
   cursor: url("$/assets/cursors/Click.svg"), pointer;
+}
+
+.cursor-normal {
+  cursor: url("$/assets/cursors/Default.svg"), auto;
 }
 
 .font-menubar {
@@ -37,15 +42,6 @@ select {
     0px 0px 3px 0px rgba(0, 0, 0, 0.55);
   will-change: transform, opacity;
   backface-visibility: hidden;
-  perspective: 1000;
+  perspective: 1000px;
   z-index: 1000;
-}
-
-.window[data-active="false"] {
-  user-select: none;
-  pointer-events: none;
-}
-
-.window[data-focus="true"] {
-  z-index: 9999999999999;
 }

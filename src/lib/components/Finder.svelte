@@ -1,9 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { fade, fly, scale } from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   import { flip } from "svelte/animate";
   import { cubicOut } from "svelte/easing";
-  import Window from "./Window.svelte";
   import {
     statuses,
     types,
@@ -13,11 +12,13 @@
   } from "$/lib/config/ysws";
   import clsx from "clsx";
   import { apiBaseUrl } from "../config/api";
+  import Application from "./Application.svelte";
+  import { ArrowUp, ArrowDown } from "@lucide/svelte";
 
   let data = $state<YSWS[]>([]);
   let selectedStatus = $state<Status>("active");
   let selectedType = $state<Type>("ysws");
-  let selectedDateSort = $state<"asc" | "desc">("asc");
+  let selectedDateSort = $state<"asc" | "desc">("desc");
   let allowDraft = $state<boolean>(false);
   let isLoading = $state(true);
 
@@ -61,99 +62,72 @@
           : undefined,
     }).format(date);
   };
+
+  const toggleSort = () => {
+    selectedDateSort = selectedDateSort === "asc" ? "desc" : "asc";
+  };
 </script>
 
-<Window
-  name="finder"
-  className="bg-white/80 backdrop-blur-[67px] overflow-hidden text-zinc-900 border"
+<Application
+  id="finder"
+  className="bg-zinc-900/90 backdrop-blur-2xl overflow-hidden text-zinc-100 border border-zinc-700/50 max-w-[90vw] max-h-[80vh]"
 >
   {#if !isLoading}
     <div class="flex flex-col h-full" in:fade>
-      <!-- Mobile Status Filter Toolbar -->
-      <div class="block space-y-2 lg:hidden border-b border-zinc-200 px-4 py-2">
-        <div class="flex justify-between items-center gap-2">
-          <span class="text-sm text-zinc-600 font-medium">Type:</span>
-          <div class="space-x-2">
-            {#each types as dataType, index}
+      <div
+        class="flex items-center md:hidden border-b border-zinc-800 px-4 py-2 space-x-4 overflow-x-auto"
+      >
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-sm text-zinc-400 font-medium">Type:</span>
+          <div
+            class="flex items-center space-x-1 bg-zinc-800/50 p-1 rounded-md"
+          >
+            {#each types as dataType}
               <button
                 class={clsx(
-                  "px-3 py-1 text-sm rounded transition-colors",
+                  "px-2 py-0.5 text-xs rounded transition-colors flex-shrink-0",
                   selectedType === dataType
-                    ? "bg-zinc-200 text-zinc-950"
-                    : "text-zinc-700 hover:bg-zinc-100 border border-zinc-200"
+                    ? "bg-blue-600 text-white"
+                    : "text-zinc-300 hover:bg-zinc-700/50"
                 )}
                 onclick={() => (selectedType = dataType)}
-                in:fly={{
-                  x: -20,
-                  duration: 300,
-                  delay: index * 100,
-                  easing: cubicOut,
-                }}
               >
-                {dataType[0].toUpperCase() + dataType.slice(1)}
+                {dataType === "ysws"
+                  ? "YSWS"
+                  : dataType[0].toUpperCase() + dataType.slice(1)}
               </button>
             {/each}
           </div>
         </div>
-        <div class="flex justify-between items-center gap-2">
-          <span class="text-sm text-zinc-600 font-medium">Status:</span>
-          <div class="space-x-2">
-            {#each statuses as status, index}
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="text-sm text-zinc-400 font-medium">Status:</span>
+          <div
+            class="flex items-center space-x-1 bg-zinc-800/50 p-1 rounded-md"
+          >
+            {#each statuses as status}
               <button
                 class={clsx(
-                  "px-3 py-1 text-sm rounded transition-colors",
+                  "px-2 py-0.5 text-xs rounded transition-colors flex-shrink-0",
                   selectedStatus === status
-                    ? "bg-zinc-200 text-zinc-950"
-                    : "text-zinc-700 hover:bg-zinc-100 border border-zinc-200"
+                    ? "bg-blue-600 text-white"
+                    : "text-zinc-300 hover:bg-zinc-700/50"
                 )}
                 onclick={() => (selectedStatus = status)}
-                in:fly={{
-                  x: -20,
-                  duration: 300,
-                  delay: index * 100,
-                  easing: cubicOut,
-                }}
               >
                 {status[0].toUpperCase() + status.slice(1)}
               </button>
             {/each}
           </div>
         </div>
-        <div class="flex justify-between items-center gap-2">
-          <span class="text-sm text-zinc-600 font-medium">Sort:</span>
-          <div class="space-x-2">
-            {#each ["asc", "desc"] as dateSort, index}
-              <button
-                class={clsx(
-                  "px-3 py-1 text-sm rounded transition-colors",
-                  selectedDateSort === dateSort
-                    ? "bg-zinc-200 text-zinc-950"
-                    : "text-zinc-700 hover:bg-zinc-100 border border-zinc-200"
-                )}
-                onclick={() => (selectedDateSort = dateSort as "asc" | "desc")}
-                in:fly={{
-                  x: -20,
-                  duration: 300,
-                  delay: index * 100,
-                  easing: cubicOut,
-                }}
-              >
-                {dateSort[0].toUpperCase() + dateSort.slice(1)}
-              </button>
-            {/each}
-          </div>
-        </div>
       </div>
 
-      <!-- Desktop Layout with Sidebar -->
       <div class="flex flex-1 overflow-hidden">
         <aside
-          class="hidden lg:block w-48 border-r border-zinc-200 p-2 overflow-y-scroll flex-shrink-0"
-          style="box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);"
+          class="hidden md:block w-48 border-r border-zinc-800 p-2 overflow-y-scroll flex-shrink-0 bg-zinc-900/80"
         >
           <div class="space-y-1">
             <div
-              class="text-xs font-medium text-zinc-500 uppercase tracking-wider px-2 py-1"
+              class="text-xs font-medium text-zinc-400 uppercase tracking-wider px-2 py-1"
             >
               Type
             </div>
@@ -162,8 +136,8 @@
                 class={clsx(
                   "w-full text-left px-2 py-1 text-sm rounded transition-colors",
                   selectedType === dataType
-                    ? "bg-zinc-200 text-zinc-950"
-                    : "text-zinc-700 hover:bg-zinc-200"
+                    ? "bg-blue-600 text-zinc-50"
+                    : "text-zinc-300 hover:bg-zinc-700/50"
                 )}
                 onclick={() => (selectedType = dataType)}
                 in:fly={{
@@ -173,13 +147,15 @@
                   easing: cubicOut,
                 }}
               >
-                {dataType[0].toUpperCase() + dataType.slice(1)}
+                {dataType === "ysws"
+                  ? "YSWS"
+                  : dataType[0].toUpperCase() + dataType.slice(1)}
               </button>
             {/each}
           </div>
-          <div class="space-y-1">
+          <div class="space-y-1 mt-4">
             <div
-              class="text-xs font-medium text-zinc-500 uppercase tracking-wider px-2 py-1"
+              class="text-xs font-medium text-zinc-400 uppercase tracking-wider px-2 py-1"
             >
               Status
             </div>
@@ -188,8 +164,8 @@
                 class={clsx(
                   "w-full text-left px-2 py-1 text-sm rounded transition-colors",
                   selectedStatus === status
-                    ? "bg-zinc-200 text-zinc-950"
-                    : "text-zinc-700 hover:bg-zinc-200"
+                    ? "bg-blue-600 text-zinc-50"
+                    : "text-zinc-300 hover:bg-zinc-700/50"
                 )}
                 onclick={() => (selectedStatus = status)}
                 in:fly={{
@@ -203,54 +179,40 @@
               </button>
             {/each}
           </div>
-          <div class="space-y-1">
-            <div
-              class="text-xs font-medium text-zinc-500 uppercase tracking-wider px-2 py-1"
-            >
-              Sort
-            </div>
-            {#each ["asc", "desc"] as dateSort, index}
-              <button
-                class={clsx(
-                  "w-full text-left px-2 py-1 text-sm rounded transition-colors",
-                  selectedDateSort === dateSort
-                    ? "bg-zinc-200 text-zinc-950"
-                    : "text-zinc-700 hover:bg-zinc-200"
-                )}
-                onclick={() => (selectedDateSort = dateSort as "asc" | "desc")}
-                in:fly={{
-                  x: -20,
-                  duration: 300,
-                  delay: index * 100,
-                  easing: cubicOut,
-                }}
-              >
-                {dateSort[0].toUpperCase() + dateSort.slice(1)}
-              </button>
-            {/each}
-          </div>
         </aside>
 
         <!-- Main Content Area -->
         <div
-          class="bg-zinc-50 flex-1 flex flex-col min-w-0 max-h-[70vh] overflow-y-scroll"
+          class="bg-zinc-800/60 flex-1 flex flex-col min-w-0 min-h-0 overflow-y-scroll"
         >
           <div
             class="flex-1"
             in:fly={{ y: 20, duration: 400, delay: 200, easing: cubicOut }}
           >
             <table class="w-full">
-              <thead class="border-b bg-zinc-50 border-zinc-200 sticky top-0">
+              <thead
+                class="border-b bg-zinc-900/70 backdrop-blur-xl border-zinc-700 sticky top-0"
+              >
                 <tr>
                   <th
-                    class="text-left px-4 py-2 text-xs font-medium text-zinc-600 uppercase tracking-wider w-full"
+                    class="text-left px-4 py-2 text-xs font-medium text-zinc-400 uppercase tracking-wider w-full"
                   >
                     Name
                   </th>
                   <th
-                    class="text-right px-4 py-2 text-xs font-medium text-zinc-600 uppercase tracking-wider w-32"
+                    class="text-right px-4 py-2 text-xs font-medium text-zinc-400 uppercase tracking-wider w-32"
                   >
-                    Deadline
+                    <button
+                      onclick={toggleSort}
+                      class="flex items-center gap-1 justify-end w-full"
+                    >
+                      Deadline
+                      {#if selectedDateSort === "asc"}
+                        <ArrowUp class="w-3 h-3" />
+                      {:else}
+                        <ArrowDown class="w-3 h-3" />
+                      {/if}
+                    </button>
                   </th>
                 </tr>
               </thead>
@@ -258,7 +220,7 @@
               <tbody>
                 {#each filteredData as ysws, index (ysws.name)}
                   <tr
-                    class="border-b border-zinc-50 hover:bg-zinc-200 transition-colors"
+                    class="border-b border-zinc-800 hover:bg-zinc-700/50 transition-colors"
                     in:fly={{
                       y: 20,
                       duration: 400,
@@ -269,16 +231,16 @@
                     animate:flip={{ duration: 300, easing: cubicOut }}
                   >
                     <td class="px-4 py-3 align-top">
-                      <h3 class="text-sm font-medium text-zinc-900">
+                      <h3 class="text-lg font-bold text-zinc-100">
                         {ysws.name}
                       </h3>
-                      <p class="text-sm text-zinc-700 leading-relaxed">
+                      <p class="text-sm w-[30ch] text-zinc-300 leading-relaxed">
                         {ysws.description}
                       </p>
                     </td>
 
                     <td class="px-4 py-3 text-right align-top">
-                      <span class="text-sm text-zinc-700">
+                      <span class="text-sm text-zinc-400">
                         {dateFormatter(new Date(ysws.end))}
                       </span>
                     </td>
@@ -292,7 +254,7 @@
                 class="flex flex-col items-center justify-center py-16 min-w-xs text-zinc-500"
                 in:fade={{ duration: 400, delay: 200 }}
               >
-                <p class="text-sm text-zinc-600 font-medium">No items</p>
+                <p class="text-sm text-zinc-400 font-medium">No items</p>
                 <p class="text-xs text-zinc-500 mt-1">This folder is empty.</p>
               </div>
             {/if}
@@ -301,4 +263,4 @@
       </div>
     </div>
   {/if}
-</Window>
+</Application>

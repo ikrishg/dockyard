@@ -1,53 +1,68 @@
-export interface App {
-  title: string;
-  name: string;
-  icon: string;
-}
-
+import { writable } from "svelte/store";
 import finderImage from "$/assets/finder.png";
 import musicImage from "$/assets/music.png";
 import settingsImage from "$/assets/settings.png";
 import xcodeImage from "$/assets/xcode.png";
 
-export const apps: App[] = [
-  {
-    title: "Finder",
-    name: "finder",
-    icon: finderImage,
-  },
-  {
-    title: "Music",
-    name: "music",
-    icon: musicImage,
-  },
-  {
-    title: "Settings",
-    name: "settings",
-    icon: settingsImage,
-  },
-  {
-    title: "Xcode",
-    name: "xcode",
-    icon: xcodeImage,
-  },
-];
-
-export function open(name: string) {
-  const event = new CustomEvent("open-app", {
-    detail: {
-      name,
-    },
-  });
-
-  document.dispatchEvent(event);
+export interface App {
+  name: string;
+  id: string;
+  icon: string;
+  isOpen: boolean;
+  inDock: boolean;
 }
 
-export function minimize(name: string) {
-  const event = new CustomEvent("minimize-app", {
-    detail: {
-      name,
-    },
-  });
+type AppsState = Record<string, App>;
 
-  document.dispatchEvent(event);
+const initialApps: AppsState = {
+  finder: {
+    name: "Finder",
+    id: "finder",
+    icon: finderImage,
+    isOpen: false,
+    inDock: true,
+  },
+  music: {
+    name: "Music",
+    id: "music",
+    icon: musicImage,
+    isOpen: false,
+    inDock: true,
+  },
+  settings: {
+    name: "Settings",
+    id: "settings",
+    icon: settingsImage,
+    isOpen: false,
+    inDock: false,
+  },
+  xcode: {
+    name: "Xcode",
+    id: "xcode",
+    icon: xcodeImage,
+    isOpen: false,
+    inDock: true,
+  },
+};
+
+export const apps = writable<AppsState>(initialApps);
+
+export function open(id: string) {
+  apps.update((current) => {
+    if (current[id]) {
+      current[id].isOpen = true;
+    }
+
+    return { ...current };
+  });
+}
+
+export function minimize(id: string) {
+  apps.update((current) => {
+    if (current[id]) {
+      current[id].isOpen = false;
+    }
+
+    return { ...current };
+  });
 }

@@ -1,9 +1,9 @@
 <script>
-  import Window from "./Window.svelte";
+  import Application from "./Application.svelte";
 </script>
 
-<Window name="xcode" className="bg-white/70 backdrop-blur-[67px]">
-  <article class="prose p-5 prose-zinc space-y-1 max-w-[50vh]">
+<Application id="xcode" className="bg-black/70 backdrop-blur-[67px]">
+  <article class="prose p-5 prose-zinc prose-invert space-y-1 max-w-[50vh]">
     <p>This website has been built by:</p>
     <h1>Krish Gupta</h1>
     <p>
@@ -24,4 +24,4 @@
       The website has been built with SvelteKit, TypeScript, and Tailwind CSS.
     </p>
   </article>
-</Window>
+</Application>
