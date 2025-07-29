@@ -3,6 +3,7 @@ import finderImage from "$/assets/finder.png";
 import musicImage from "$/assets/music.png";
 import settingsImage from "$/assets/settings.png";
 import xcodeImage from "$/assets/xcode.png";
+import clockImage from "$/assets/clock.png";
 
 export interface App {
   name: string;
@@ -40,6 +41,13 @@ const initialApps: AppsState = {
     name: "Xcode",
     id: "xcode",
     icon: xcodeImage,
+    isOpen: false,
+    inDock: true,
+  },
+  clock: {
+    name: "Clock",
+    id: "clock",
+    icon: clockImage,
     isOpen: false,
     inDock: true,
   },
