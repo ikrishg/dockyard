@@ -152,7 +152,7 @@
     } else {
       url.searchParams.set(
         "id",
-        encodeURIComponent(formData.name.toLowerCase())
+        formData.name.replace(/[^a-z0-9]+/gi, "-").toLowerCase()
       );
     }
     formFields.forEach((field) => {
