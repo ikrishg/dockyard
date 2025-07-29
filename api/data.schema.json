@@ -74,6 +74,7 @@
     },
     "timeline": {
       "description": "The timelines of the program, with start and end dates. Used in a chart to display the timelines of all YSWS.",
+      "minItems": 1,
       "type": "array",
       "items": {
         "type": "object",
