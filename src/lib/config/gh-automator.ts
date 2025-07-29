@@ -17,7 +17,6 @@ export const issueSchema = z.object({
   "slack-link": dataSchema.shape.extern.shape.slack.shape.link,
   "slack-name": dataSchema.shape.extern.shape.slack.shape.name,
   timeline: dataSchema.shape.timeline,
-  ships: dataSchema.shape.ships,
 });
 
 export type IssueData = z.infer<typeof issueSchema>;

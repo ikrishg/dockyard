@@ -52,6 +52,7 @@ const dataSchema = z.object({
         end: DateString,
       })
     )
+    .min(1, "At least one timeline is required")
     .describe(
       "The timelines of the program, with start and end dates. Used in a chart to display the timelines of all YSWS."
     ),

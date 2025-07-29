@@ -73,8 +73,23 @@ export async function getIssueAndData() {
   };
 }
 
+export async function getExistingData(id: string) {
+  const filePath = path.join(DATA_DIR, `${id}.json`);
+  if (!fs.existsSync(filePath)) {
+    return undefined;
+  }
+
+  const content = fs.readFileSync(filePath, "utf-8");
+  if (!content) {
+    return undefined;
+  }
+
+  return dataSchema.parse(JSON.parse(content));
+}
+
 export async function convertData(data: z.infer<typeof issueSchema>) {
   const parsedData = issueSchema.parse(data);
+  const existingData = await getExistingData(parsedData.id);
 
   return dataSchema.parse({
     name: parsedData.name,
@@ -91,7 +106,7 @@ export async function convertData(data: z.infer<typeof issueSchema>) {
       },
     },
     timeline: parsedData.timeline,
-    ships: parsedData.ships,
+    ships: existingData?.ships || [],
   });
 }
 

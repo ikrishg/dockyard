@@ -98,17 +98,9 @@ body:
       required: true
 
   - type: input
-    id: timelines
+    id: timeline
     attributes:
       label: Timelines
-      placeholder: "YUH let dockyard fill this in"
-    validations:
-      required: true
-
-  - type: input
-    id: ships
-    attributes:
-      label: Ships
       placeholder: "YUH let dockyard fill this in"
     validations:
       required: true

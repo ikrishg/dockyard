@@ -32,8 +32,7 @@
     website: null,
     "slack-link": "https://hackclub.slack.com/archives/",
     "slack-name": "channel-name",
-    timeline: [],
-    ships: [],
+    timeline: [{ start: "", end: "" }],
   };
   let formData = $state<IssueData>({ ...blankFormData });
 
@@ -90,6 +89,11 @@
     fetch(url.toString())
       .then(async (response) => await response.json())
       .then((json: DataItem) => {
+        // convert ISO timestamps to date-only strings for date inputs
+        const timelineEntries = json.timeline.map((e) => ({
+          start: e.start.split("T")[0],
+          end: e.end.split("T")[0],
+        }));
         formData = issueSchema.parse({
           id,
           name: json.name,
@@ -101,8 +105,7 @@
           website: json.extern.website,
           "slack-link": json.extern.slack.link,
           "slack-name": json.extern.slack.name,
-          timeline: json.timeline,
-          ships: json.ships,
+          timeline: timelineEntries,
         });
       })
       .catch((error) => {
@@ -129,7 +132,27 @@
       }
     });
 
+    url.searchParams.set(
+      "timeline",
+      JSON.stringify(
+        formData.timeline.map((entry) => ({
+          start: entry.start,
+          end: entry.end,
+        }))
+      )
+    );
+
     window.open(url.toString(), "_blank");
+  }
+
+  function addTimeline() {
+    formData.timeline = [...formData.timeline, { start: "", end: "" }];
+  }
+
+  function removeTimeline(index: number) {
+    if (formData.timeline.length > 1) {
+      formData.timeline = formData.timeline.filter((_, i) => i !== index);
+    }
   }
 </script>
 
@@ -190,7 +213,7 @@
               onchange={() => handleProgramSelect(selectedProgramId)}
               class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
             >
-              <option value="">-- Select a program --</option>
+              <option value="">Select a Program</option>
               {#each programs as prog}
                 <option value={prog.id}>{prog.name}</option>
               {/each}
@@ -248,6 +271,59 @@
               </div>
             {/if}
           {/each}
+
+          <div class="space-y-2">
+            <label
+              for="timeline"
+              class="block text-sm text-zinc-300 font-medium">Timeline</label
+            >
+            {#each formData.timeline as entry, index}
+              <div
+                class="grid gap-2 items-end"
+                class:grid-cols-3={formData.timeline.length > 1}
+                class:grid-cols-2={formData.timeline.length <= 1}
+              >
+                <div class="space-y-1">
+                  <label for="start-{index}" class="text-xs text-zinc-400"
+                    >Start</label
+                  >
+                  <input
+                    id="start-{index}"
+                    type="date"
+                    bind:value={formData.timeline[index].start}
+                    class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label for="end-{index}" class="text-xs text-zinc-400"
+                    >End</label
+                  >
+                  <input
+                    id="end-{index}"
+                    type="date"
+                    bind:value={formData.timeline[index].end}
+                    class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                  />
+                </div>
+                {#if index >= 1}
+                  <button
+                    type="button"
+                    onclick={() => removeTimeline(index)}
+                    class="px-2 py-1 text-red-500 hover:text-red-400 text-xs font-medium transition"
+                  >
+                    Remove
+                  </button>
+                {/if}
+              </div>
+            {/each}
+            <button
+              type="button"
+              onclick={addTimeline}
+              class="mt-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium transition"
+            >
+              Add Timeline
+            </button>
+          </div>
 
           <div class="flex space-x-4 pt-4">
             <button
