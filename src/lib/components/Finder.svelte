@@ -18,7 +18,7 @@
   let data = $state<YSWS[]>([]);
   let selectedStatus = $state<Status>("active");
   let selectedType = $state<Type>("ysws");
-  let selectedDateSort = $state<"asc" | "desc">("desc");
+  let selectedDateSort = $state<"asc" | "desc">("asc");
   let allowDraft = $state<boolean>(false);
   let isLoading = $state(true);
 
