@@ -60,7 +60,7 @@ jobs:
         if: ${{ github.event_name != 'pull_request' && steps.check_branch.outputs.branch_exists == 'true' }}
         run: |
           gh pr create --base main --head api-build-${{ github.run_id }} --title "API Build Update" --body "Automated API build update."
-          gh pr merge --auto --squash --delete-branch --admin
+          gh pr merge --squash --delete-branch --admin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
