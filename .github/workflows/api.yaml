@@ -5,16 +5,17 @@ on:
     branches:
       - main
     paths:
-      - ".github/workflows/api.yaml"
-      - "scripts/**"
+      - ".github/workflows/**"
+      - "src/scripts/**"
       - "api/**"
   pull_request:
     paths:
-      - ".github/workflows/api.yaml"
-      - "scripts/**"
+      - ".github/workflows/**"
+      - "src/scripts/**"
       - "api/**"
   schedule:
     - cron: "0 */3 * * *" # Every 3 hours
+  workflow_dispatch:
 
 jobs:
   build-api:
