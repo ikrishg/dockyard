@@ -13,9 +13,6 @@ const dataSchema = z.object({
     ),
   draft: z
     .boolean()
-    .or(
-      z.enum(["true", "false"]).transform((v) => (v === "true" ? true : false))
-    )
     .describe(
       "Whether the program is in draft mode. If true, it will not be displayed on the website."
     ),

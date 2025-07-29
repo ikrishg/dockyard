@@ -11,7 +11,11 @@ export const issueSchema = z.object({
   type: z.array(dataSchema.shape.type).transform((v) => v[0]),
   draft: z
     .array(
-      z.string().transform((v) => dataSchema.shape.draft.parse(new Boolean(v)))
+      z
+        .string()
+        .transform((v) =>
+          dataSchema.shape.draft.parse(new Boolean(v).valueOf())
+        )
     )
     .transform((v) => v[0]),
   description: dataSchema.shape.description.min(1, "Description is required"),
