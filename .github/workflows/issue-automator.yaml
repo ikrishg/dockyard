@@ -19,26 +19,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Determine Template
-        id: template
-        run: |
-          if [[ "${{ github.event.issue.labels }}" == *"gh-automator-new-program"* ]]; then
-            echo "template=new-program" >> $GITHUB_OUTPUT
-          elif [[ "${{ github.event.issue.labels }}" == *"gh-automator-edit-program"* ]]; then
-            echo "template=edit-program" >> $GITHUB_OUTPUT
-          else
-            echo "template=none" >> $GITHUB_OUTPUT
-          fi
-
       - name: Run the Action
-        if: ${{ steps.template.outputs.template != 'none' }}
         run: |
-          if [[ "${{ steps.template.outputs.template }}" == 'new-program' ]]; then
-            bun run issue-automator:new-program
-          elif [[ "${{ steps.template.outputs.template }}" == 'edit-program' ]]; then
-            bun run issue-automator:edit-program
-          fi
-
+          bun run gh-automator
           bun run build:api
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

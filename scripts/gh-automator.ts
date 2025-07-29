@@ -3,14 +3,11 @@ import { Octokit } from "@octokit/rest";
 import fs from "fs";
 import path from "path";
 import { z } from "zod";
-import { dataSchema } from "./data-schema";
+import { dataSchema } from "./utils/data-schema";
 
 const TEMPLATES_DIR = path.join(process.cwd(), ".github", "ISSUE_TEMPLATE");
 
-const TEMPLATES = {
-  "new-program": path.join(TEMPLATES_DIR, "new-program.yaml"),
-  "edit-program": path.join(TEMPLATES_DIR, "edit-program.yaml"),
-};
+const TEMPLATE = path.join(TEMPLATES_DIR, "gh-automator.yaml");
 
 const DATA_DIR = path.join(process.cwd(), "api", "data");
 
@@ -29,7 +26,7 @@ export const issueSchema = z.object({
   ships: dataSchema.shape.ships,
 });
 
-export async function getIssueAndData(template: keyof typeof TEMPLATES) {
+export async function getIssueAndData() {
   if (!process.env.GITHUB_ISSUE) {
     // kkrishguptaa/dockyard#123
     throw new Error("GITHUB_ISSUE environment variable is not set.");
@@ -70,17 +67,16 @@ export async function getIssueAndData(template: keyof typeof TEMPLATES) {
     process.exit(0);
   }
 
-  const templateFile = TEMPLATES[template];
-  if (!fs.existsSync(templateFile)) {
-    throw new Error(`Template file not found: ${templateFile}`);
+  if (!fs.existsSync(TEMPLATE)) {
+    throw new Error(`Template file not found: ${TEMPLATE}`);
   }
 
-  const templateContent = fs.readFileSync(templateFile, "utf-8");
-  if (!templateContent) {
-    throw new Error(`Template file is empty: ${templateFile}`);
+  const template = fs.readFileSync(TEMPLATE, "utf-8");
+  if (!template) {
+    throw new Error(`Template file is empty: ${TEMPLATE}`);
   }
 
-  const parsedIssue = parseIssue(issue.data.body, templateContent);
+  const parsedIssue = parseIssue(issue.data.body, template);
 
   console.log(parsedIssue);
 
@@ -122,3 +118,11 @@ export async function createFile(id: string, data: z.infer<typeof dataSchema>) {
   console.log(`File created at ${filePath}`);
   return filePath;
 }
+
+const { zod } = await getIssueAndData();
+
+const { id } = zod;
+
+const convertedData = await convertData(zod);
+
+createFile(id, convertedData);

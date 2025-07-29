@@ -1,8 +1,8 @@
-name: Create a New Program
-description: Use this template to add a new program to the repository.
+name: GH Automator
+description: Use this template to add a new/edit existing program in the repository.
 
-title: "[gh-automator] New Program: "
-labels: ["gh-automator-new-program"]
+title: "[gh-automator] Program: "
+labels: ["gh-automator"]
 
 body:
   - type: markdown
