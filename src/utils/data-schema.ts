@@ -64,7 +64,6 @@ const dataSchema = z.object({
         image: z.url().describe("Will be used in a masonry grid."),
       })
     )
-    .optional()
     .default([])
     .describe(
       "An array of ships associated with the program. Each ship has a name, description, URL, and image."

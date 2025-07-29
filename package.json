@@ -15,10 +15,9 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint .",
-    "build:json-schema": "bun run scripts/build-json-schema.ts",
-    "build:api": "bun run scripts/build-api.ts",
-    "issue-automator:new-program": "bun run scripts/new-program.ts",
-    "issue-automator:edit-program": "bun run scripts/edit-program.ts"
+    "build:json-schema": "bun run src/scripts/build-json-schema.ts",
+    "build:api": "bun run src/scripts/build-api.ts",
+    "gh-automator": "bun run src/scripts/gh-automator.ts"
   },
   "devDependencies": {
     "@eslint/compat": "1.3.1",
@@ -29,7 +28,6 @@
     "@sveltejs/adapter-static": "3.0.8",
     "@sveltejs/kit": "2.26.1",
     "@sveltejs/vite-plugin-svelte": "6.1.0",
-    "@tailwindcss/forms": "0.5.10",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.1.11",
     "@types/bun": "1.2.19",

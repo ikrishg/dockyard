@@ -1,4 +1,4 @@
-name: Issue Automator
+name: GH Automator
 on:
   issues:
     types: [labeled]

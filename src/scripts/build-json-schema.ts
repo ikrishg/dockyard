@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { z } from "zod";
-import { dataSchema } from "./utils/data-schema";
+import { dataSchema } from "../utils/data-schema";
 
 const dataJSONSchema = z.toJSONSchema(dataSchema);
 

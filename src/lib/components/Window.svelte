@@ -26,6 +26,7 @@
     Draggable.create(windowElement, {
       inertia: true,
       bounds: document.getElementById("main"),
+      allowEventDefault: true,
       onClick: () => {
         document.body.setAttribute("data-focus-window", name || "");
       },

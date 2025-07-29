@@ -114,25 +114,6 @@
     "end": "2025-08-06T23:59:59"
   },
   {
-    "name": "Decode",
-    "id": "decode",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Learn how a tech product works (hardware + software) and we ship you a grant to make it yourself!",
-    "ys": "Understanding of a tech product",
-    "ws": "A grant to make it yourself!",
-    "extern": {
-      "website": "https://decode.hackclub.dev",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C091GPYCAFL",
-        "name": "decode"
-      }
-    },
-    "start": "2025-06-24T00:00:00-04:00",
-    "end": "2025-07-09T23:59:59-04:00"
-  },
-  {
     "name": "Converge",
     "id": "converge",
     "status": "inactive",
@@ -152,61 +133,23 @@
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
-    "name": "Twist",
-    "id": "twist",
+    "name": "Decode",
+    "id": "decode",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Make an esolang, get stickers and a $40 electronics grant.",
-    "ys": "An esolang",
-    "ws": "Stickers and a $40 electronics grant",
+    "description": "Learn how a tech product works (hardware + software) and we ship you a grant to make it yourself!",
+    "ys": "Understanding of a tech product",
+    "ws": "A grant to make it yourself!",
     "extern": {
-      "website": "https://twist.hackclub.dev",
+      "website": "https://decode.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C092A93FA4X",
-        "name": "twist-ysws"
+        "link": "https://hackclub.slack.com/archives/C091GPYCAFL",
+        "name": "decode"
       }
     },
-    "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-14T23:59:59-04:00"
-  },
-  {
-    "name": "Gamefolio",
-    "id": "gamefolio",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
-    "ys": "A portfolio site with a game theme",
-    "ws": "$20 grant for domains or hosting",
-    "extern": {
-      "website": "https://gamefolio.hackclub.dev",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C08RT4C2485",
-        "name": "gamefolio"
-      }
-    },
-    "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
-  },
-  {
-    "name": "Hackmate",
-    "id": "hackmate",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a collaborative app, ship it, and get rewarded with cloud credits/raspberry pi!",
-    "ys": "A Collaborative App",
-    "ws": "Cloud Credits/Raspberry Pi",
-    "extern": {
-      "website": "https://hackmate.hackclub.dev",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C092HR1LG20",
-        "name": "hackmate"
-      }
-    },
-    "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
+    "start": "2025-06-24T00:00:00-04:00",
+    "end": "2025-07-09T23:59:59-04:00"
   },
   {
     "name": "Reinforced",
@@ -228,25 +171,6 @@
     "end": "2025-07-16T23:59:59-04:00"
   },
   {
-    "name": "Illumination",
-    "id": "illumination",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build an IOT device, get everything you need to have it running!",
-    "ys": "A program that runs on an ESP32, a backend that connects to your ESP32, and a website to control your ESP32 and backend.",
-    "ws": "A cool ESP32-S3 based devboard, hardware parts you choose, and cloud credits to run your backend with.",
-    "extern": {
-      "website": "https://illumination.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C091MS57D37",
-        "name": "illumination"
-      }
-    },
-    "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-10T23:59:59-04:00"
-  },
-  {
     "name": "Pulse",
     "id": "pulse",
     "status": "inactive",
@@ -266,23 +190,80 @@
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
-    "name": "Pathfinder",
-    "id": "pathfinder",
+    "name": "Gamefolio",
+    "id": "gamefolio",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
-    "ys": "A custom PCB controller board and efidget",
-    "ws": "Grants and materials to build it!",
+    "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
+    "ys": "A portfolio site with a game theme",
+    "ws": "$20 grant for domains or hosting",
     "extern": {
-      "website": "https://pathfinder.hackclub.com",
+      "website": "https://gamefolio.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
-        "name": "pathfinder"
+        "link": "https://hackclub.slack.com/archives/C08RT4C2485",
+        "name": "gamefolio"
       }
     },
-    "start": "2025-06-28T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
+    "start": "2025-06-25T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
+  },
+  {
+    "name": "Illumination",
+    "id": "illumination",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build an IOT device, get everything you need to have it running!",
+    "ys": "A program that runs on an ESP32, a backend that connects to your ESP32, and a website to control your ESP32 and backend.",
+    "ws": "A cool ESP32-S3 based devboard, hardware parts you choose, and cloud credits to run your backend with.",
+    "extern": {
+      "website": "https://illumination.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C091MS57D37",
+        "name": "illumination"
+      }
+    },
+    "start": "2025-06-25T00:00:00-04:00",
+    "end": "2025-07-10T23:59:59-04:00"
+  },
+  {
+    "name": "Twist",
+    "id": "twist",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Make an esolang, get stickers and a $40 electronics grant.",
+    "ys": "An esolang",
+    "ws": "Stickers and a $40 electronics grant",
+    "extern": {
+      "website": "https://twist.hackclub.dev",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C092A93FA4X",
+        "name": "twist-ysws"
+      }
+    },
+    "start": "2025-06-25T00:00:00-04:00",
+    "end": "2025-07-14T23:59:59-04:00"
+  },
+  {
+    "name": "Hackmate",
+    "id": "hackmate",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a collaborative app, ship it, and get rewarded with cloud credits/raspberry pi!",
+    "ys": "A Collaborative App",
+    "ws": "Cloud Credits/Raspberry Pi",
+    "extern": {
+      "website": "https://hackmate.hackclub.dev",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C092HR1LG20",
+        "name": "hackmate"
+      }
+    },
+    "start": "2025-06-25T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
   },
   {
     "name": "Rewind",
@@ -302,6 +283,25 @@
     },
     "start": "2025-06-28T00:00:00-04:00",
     "end": "2025-07-08T23:59:59-04:00"
+  },
+  {
+    "name": "Pathfinder",
+    "id": "pathfinder",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
+    "ys": "A custom PCB controller board and efidget",
+    "ws": "Grants and materials to build it!",
+    "extern": {
+      "website": "https://pathfinder.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
+        "name": "pathfinder"
+      }
+    },
+    "start": "2025-06-28T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
   },
   {
     "name": "Anansi",

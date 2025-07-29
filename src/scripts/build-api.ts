@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { dataSchema } from "./utils/data-schema";
-import { apiSchema } from "./utils/api-schema";
+import { dataSchema } from "../utils/data-schema";
+import { apiSchema } from "../utils/api-schema";
 
 function makeAPIData(id: string, content: string) {
   const data = dataSchema.parse(content);

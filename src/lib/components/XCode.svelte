@@ -1,27 +1,265 @@
-<script>
+<script lang="ts">
+  import { onMount } from "svelte";
+  import { fade, fly } from "svelte/transition";
+  import { cubicOut } from "svelte/easing";
+  import { Plus, GitBranch } from "@lucide/svelte";
+  import {
+    apiBaseUrl,
+    type DataItem,
+    type DataListElement,
+  } from "../config/api";
   import Application from "./Application.svelte";
+  import {
+    gitHubIssueBaseUrl,
+    issueSchema,
+    type IssueData,
+  } from "$/lib/config/gh-automator";
+  import { types } from "../config/api";
+
+  let mode = $state<"choose" | "new" | "edit">("choose");
+  let isLoading = $state(true);
+  let programs = $state<DataListElement[]>([]);
+  let selectedProgramId = $state("");
+
+  const blankFormData: IssueData = {
+    id: "",
+    name: "",
+    type: "ysws",
+    draft: true,
+    description: "",
+    ys: "",
+    ws: "",
+    website: null,
+    "slack-link": "https://hackclub.slack.com/archives/",
+    "slack-name": "channel-name",
+    timeline: [],
+    ships: [],
+  };
+  let formData = $state<IssueData>({ ...blankFormData });
+
+  type Field =
+    | {
+        id: keyof IssueData;
+        label: string;
+        type: "text" | "url" | "checkbox" | "textarea" | "input";
+      }
+    | {
+        id: keyof IssueData;
+        label: string;
+        type: "select";
+        options: string[];
+      };
+
+  const formFields: Field[] = [
+    { id: "name", label: "Name", type: "text" },
+    { id: "draft", label: "Draft", type: "checkbox" },
+    { id: "type", label: "Type", type: "select", options: types },
+    { id: "description", label: "Description", type: "textarea" },
+    { id: "ys", label: "YS", type: "text" },
+    { id: "ws", label: "WS", type: "text" },
+    { id: "slack-link", label: "Slack Link", type: "url" },
+    { id: "slack-name", label: "Slack Name", type: "text" },
+    { id: "website", label: "Website", type: "url" },
+  ];
+
+  onMount(() => {
+    const url = apiBaseUrl;
+    url.pathname = "/data.json";
+    fetch(url.toString())
+      .then((res) => res.json())
+      .then((data: DataListElement[]) => {
+        programs = data;
+        isLoading = false;
+      })
+      .catch((err) => {
+        console.error("Error fetching data:", err);
+        isLoading = false;
+      });
+  });
+
+  function resetForm(type: "new" | "edit" | "choose") {
+    formData = { ...blankFormData };
+    selectedProgramId = "";
+    mode = type;
+  }
+
+  function handleProgramSelect(id: DataListElement["id"]) {
+    const url = apiBaseUrl;
+    url.pathname = `/data/${id}.json`;
+
+    fetch(url.toString())
+      .then(async (response) => await response.json())
+      .then((json: DataItem) => {
+        formData = issueSchema.parse({
+          id,
+          name: json.name,
+          type: [json.type],
+          draft: [json.draft],
+          description: json.description,
+          ys: json.ys,
+          ws: json.ws,
+          website: json.extern.website,
+          "slack-link": json.extern.slack.link,
+          "slack-name": json.extern.slack.name,
+          timeline: json.timeline,
+          ships: json.ships,
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching program data:", error);
+      });
+  }
+
+  function handleSave() {
+    const url = new URL(gitHubIssueBaseUrl.toString());
+    if (formData.id.length > 0) {
+      url.searchParams.set("id", formData.id);
+    } else {
+      url.searchParams.set(
+        "id",
+        encodeURIComponent(formData.name.toLowerCase())
+      );
+    }
+    formFields.forEach((field) => {
+      const value = formData[field.id];
+      if (field.type === "checkbox") {
+        url.searchParams.set(field.id, value ? "true" : "false");
+      } else {
+        url.searchParams.set(field.id, String(value ?? ""));
+      }
+    });
+
+    window.open(url.toString(), "_blank");
+  }
 </script>
 
-<Application id="xcode" className="bg-black/70 backdrop-blur-[67px]">
-  <article class="prose p-5 prose-zinc prose-invert space-y-1 max-w-[50vh]">
-    <p>This website has been built by:</p>
-    <h1>Krish Gupta</h1>
-    <p>
-      You can connect with me on <a
-        href="https://hackclub.slack.com/team/U02KQ9WQT0A">HackClub Slack</a
-      >, <a href="https://github.com/kkrishguptaa">GitHub</a>, or
-      <a href="https://twitter.com/kkrishguptaa">Twitter</a>.
-    </p>
-    <p>
-      This website has been built for HackClub. HackClub hosts a bunch of
-      programs called <abbr title="You Ship We Ship">YSWS</abbr>. This website
-      allows you to login with your HackClub ID and find YSWS(s) to participate
-      in. The website also features a checklist functionality for YSWS(s). You
-      can add your own YSWS(s) to the website as drafts and get them approved to
-      have them display!
-    </p>
-    <p>
-      The website has been built with SvelteKit, TypeScript, and Tailwind CSS.
-    </p>
-  </article>
+<Application
+  id="xcode"
+  className="bg-zinc-900 overflow-hidden text-zinc-100 border border-zinc-700/50 rounded-2xl shadow-2xl max-w-3xl mx-auto "
+>
+  <div class="p-8 space-y-8">
+    {#if isLoading}
+      <div class="text-center text-zinc-500 text-base" in:fade>
+        Loading programs...
+      </div>
+    {:else if mode === "choose"}
+      <div class="flex flex-col items-center text-center space-y-6" in:fade>
+        <img src="/favicon.svg" alt="Xcode" class="h-20 w-20" />
+        <h1 class="text-2xl font-semibold text-zinc-100">Dockyard</h1>
+        <p class="text-sm text-zinc-400">Warehouse</p>
+        <div class="space-y-4 w-full max-w-xs">
+          <button
+            onclick={() => resetForm("new")}
+            class="flex items-center justify-center w-full px-4 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-zinc-100 text-base font-medium transition"
+          >
+            <Plus class="w-5 h-5 mr-2" />
+            Create New Program
+          </button>
+          <button
+            onclick={() => resetForm("edit")}
+            class="flex items-center justify-center w-full px-4 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-zinc-100 text-base font-medium transition"
+          >
+            <GitBranch class="w-5 h-5 mr-2" />
+            Edit Existing Program
+          </button>
+        </div>
+      </div>
+    {:else}
+      <form
+        class="space-y-4"
+        in:fly={{ y: 10, duration: 300, easing: cubicOut }}
+      >
+        <button
+          type="button"
+          onclick={() => resetForm("choose")}
+          class="text-sm text-blue-400 hover:text-blue-300 transition"
+        >
+          ← Back
+        </button>
+        {#if mode === "edit"}
+          <div class="space-y-2">
+            <label
+              for="select-program"
+              class="text-sm text-zinc-300 font-medium"
+            >
+              Select Program
+            </label>
+            <select
+              id="select-program"
+              bind:value={selectedProgramId}
+              onchange={() => handleProgramSelect(selectedProgramId)}
+              class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+            >
+              <option value="">-- Select a program --</option>
+              {#each programs as prog}
+                <option value={prog.id}>{prog.name}</option>
+              {/each}
+            </select>
+          </div>
+        {/if}
+
+        {#if mode === "new" || (mode === "edit" && formData.id)}
+          {#each formFields as field}
+            {#if field.type === "checkbox"}
+              <div class="flex items-center space-x-3">
+                <input
+                  id={field.id}
+                  type="checkbox"
+                  bind:checked={formData[field.id] as boolean}
+                  class="h-5 w-5 text-blue-500 bg-zinc-700 border-zinc-600 rounded focus:ring-2 focus:ring-blue-500"
+                />
+                <label for={field.id} class="text-sm text-zinc-300"
+                  >{field.label}</label
+                >
+              </div>
+            {:else}
+              <div class="space-y-2">
+                <label
+                  for={field.id}
+                  class="block text-sm text-zinc-300 font-medium"
+                >
+                  {field.label}
+                </label>
+                {#if field.type === "select"}
+                  <select
+                    id={field.id}
+                    bind:value={formData[field.id]}
+                    class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                  >
+                    {#each field.options as opt}
+                      <option value={opt}>{opt}</option>
+                    {/each}
+                  </select>
+                {:else if field.type === "textarea"}
+                  <textarea
+                    id={field.id}
+                    rows="3"
+                    bind:value={formData[field.id]}
+                    class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 placeholder-zinc-500 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                  ></textarea>
+                {:else}
+                  <input
+                    id={field.id}
+                    type={field.type}
+                    bind:value={formData[field.id]}
+                    class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 placeholder-zinc-500 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                  />
+                {/if}
+              </div>
+            {/if}
+          {/each}
+
+          <div class="flex space-x-4 pt-4">
+            <button
+              type="button"
+              onclick={handleSave}
+              class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-base font-medium transition"
+            >
+              Save
+            </button>
+          </div>
+        {/if}
+      </form>
+    {/if}
+  </div>
 </Application>

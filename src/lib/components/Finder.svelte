@@ -8,14 +8,14 @@
     types,
     type Status,
     type Type,
-    type YSWS,
-  } from "$/lib/config/ysws";
+    type DataListElement,
+    apiBaseUrl,
+  } from "$/lib/config/api";
   import clsx from "clsx";
-  import { apiBaseUrl } from "../config/api";
   import Application from "./Application.svelte";
   import { ArrowUp, ArrowDown } from "@lucide/svelte";
 
-  let data = $state<YSWS[]>([]);
+  let data = $state<DataListElement[]>([]);
   let selectedStatus = $state<Status>("active");
   let selectedType = $state<Type>("ysws");
   let selectedDateSort = $state<"asc" | "desc">("asc");
@@ -29,7 +29,7 @@
     fetch(url.toString())
       .then((response) => response.json())
       .then((json) => {
-        data = json as YSWS[];
+        data = json as DataListElement[];
         isLoading = false;
       })
       .catch((error) => {

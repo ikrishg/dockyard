@@ -1,9 +1,0 @@
-import { convertData, createFile, getIssueAndData } from "./utils/gh-automator";
-
-const { zod } = await getIssueAndData("edit-program");
-
-const { id } = zod;
-
-const convertedData = await convertData(zod);
-
-createFile(id, convertedData);

@@ -4,27 +4,13 @@ import fs from "fs";
 import path from "path";
 import { z } from "zod";
 import { dataSchema } from "../utils/data-schema";
+import { issueSchema } from "$/lib/config/gh-automator";
 
 const TEMPLATES_DIR = path.join(process.cwd(), ".github", "ISSUE_TEMPLATE");
 
 const TEMPLATE = path.join(TEMPLATES_DIR, "gh-automator.yaml");
 
 const DATA_DIR = path.join(process.cwd(), "api", "data");
-
-export const issueSchema = z.object({
-  id: z.string().min(1, "Program slug is required"),
-  name: dataSchema.shape.name.min(1, "Program name is required"),
-  type: z.array(dataSchema.shape.type),
-  draft: z.array(dataSchema.shape.draft),
-  description: dataSchema.shape.description.min(1, "Description is required"),
-  ys: dataSchema.shape.ys.min(1, "YS is required"),
-  ws: dataSchema.shape.ws.min(1, "WS is required"),
-  website: dataSchema.shape.extern.shape.website.optional().default(null),
-  "slack-link": dataSchema.shape.extern.shape.slack.shape.link,
-  "slack-name": dataSchema.shape.extern.shape.slack.shape.name,
-  timeline: dataSchema.shape.timeline,
-  ships: dataSchema.shape.ships,
-});
 
 export async function getIssueAndData() {
   if (!process.env.GITHUB_ISSUE) {
@@ -92,8 +78,8 @@ export async function convertData(data: z.infer<typeof issueSchema>) {
 
   return dataSchema.parse({
     name: parsedData.name,
-    type: parsedData.type[0],
-    draft: parsedData.draft[0],
+    type: parsedData.type,
+    draft: parsedData.draft,
     description: parsedData.description,
     ys: parsedData.ys,
     ws: parsedData.ws,

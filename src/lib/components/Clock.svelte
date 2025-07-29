@@ -2,11 +2,10 @@
   import { onMount, onDestroy } from "svelte";
   import { fade, fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
-  import type { YSWS } from "$/lib/config/ysws";
-  import { apiBaseUrl } from "../config/api";
+  import { apiBaseUrl, type DataListElement } from "$/lib/config/api";
   import Application from "./Application.svelte";
 
-  let data = $state<YSWS[]>([]);
+  let data = $state<DataListElement[]>([]);
   let isLoading = $state(true);
   let now = $state(new Date());
 
@@ -20,7 +19,7 @@
       .then((response) => response.json())
       .then((json) => {
         const now = new Date();
-        data = (json as YSWS[])
+        data = (json as DataListElement[])
           .filter((item) => new Date(item.end).getTime() > now.getTime())
           .sort(
             (a, b) => new Date(a.end).getTime() - new Date(b.end).getTime()
