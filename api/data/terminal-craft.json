@@ -1,0 +1,22 @@
+{
+  "name": "Terminal Craft",
+  "type": "ysws",
+  "draft": false,
+  "description": "Build and publish your own terminal program and earn a $60 grant for hackable electronics!",
+  "ys": "Terminal Program",
+  "ws": "$60 for RPI/hackable electronics!",
+  "extern": {
+    "website": "https://terminalcraft.hackclub.com",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C08F58MT3GV",
+      "name": "terminal-craft"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-07-14",
+      "end": "2025-08-10"
+    }
+  ],
+  "ships": []
+}
