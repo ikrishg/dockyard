@@ -126,7 +126,7 @@
     formFields.forEach((field) => {
       const value = formData[field.id];
       if (field.type === "checkbox") {
-        url.searchParams.set(field.id, value ? "true" : "false");
+        url.searchParams.set(field.id, value ? '"true"' : '"false"');
       } else {
         url.searchParams.set(field.id, String(value ?? ""));
       }
