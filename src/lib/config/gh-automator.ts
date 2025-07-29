@@ -10,7 +10,9 @@ export const issueSchema = z.object({
   name: dataSchema.shape.name.min(1, "Program name is required"),
   type: z.array(dataSchema.shape.type).transform((v) => v[0]),
   draft: z
-    .array(z.string().transform((v) => dataSchema.shape.draft.parse(v)))
+    .array(
+      z.string().transform((v) => dataSchema.shape.draft.parse(new Boolean(v)))
+    )
     .transform((v) => v[0]),
   description: dataSchema.shape.description.min(1, "Description is required"),
   ys: dataSchema.shape.ys.min(1, "YS is required"),
