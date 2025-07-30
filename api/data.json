@@ -1,43 +1,5 @@
 [
   {
-    "name": "Terminal Craft",
-    "id": "terminal-craft",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build and publish your own terminal program and earn a $60 grant for hackable electronics!",
-    "ys": "Terminal Program",
-    "ws": "$60 for RPI/hackable electronics!",
-    "extern": {
-      "website": "https://terminalcraft.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C08F58MT3GV",
-        "name": "terminal-craft"
-      }
-    },
-    "start": "2025-02-28T00:00:00-04:00",
-    "end": "2025-03-19T23:59:59-04:00"
-  },
-  {
-    "name": "Thunder",
-    "id": "thunder",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
-    "ys": "A Slack bot",
-    "ws": "A limited edition Orpheus bucket hat",
-    "extern": {
-      "website": null,
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C06V2GEV3MY",
-        "name": "thunder"
-      }
-    },
-    "start": "2025-05-16T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
-  },
-  {
     "name": "Cider",
     "id": "cider",
     "status": "active",
@@ -55,44 +17,6 @@
     },
     "start": "2025-05-25T00:00:00-04:00",
     "end": "2025-08-31T23:59:59-04:00"
-  },
-  {
-    "name": "Dockerize",
-    "id": "dockerize",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a self-hosted application using Docker, we ship you stickers and a chance to win a ZimaBoard.",
-    "ys": "A Dockerized Application",
-    "ws": "Stickers and a chance to win a ZimaBoard.",
-    "extern": {
-      "website": "https://dockerize.hackclub.com/",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C092D9HARSQ",
-        "name": "dockerize"
-      }
-    },
-    "start": "2025-06-20T00:00:00-04:00",
-    "end": "2025-07-11T23:59:59-04:00"
-  },
-  {
-    "name": "Reactive",
-    "id": "reactive",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Ship a website built with React, get $15 to buy a domain.",
-    "ys": "A website built with React",
-    "ws": "$15 to buy a domain",
-    "extern": {
-      "website": "http://reactive.hackclub.dev",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C090S7Q2HT4",
-        "name": "reactive"
-      }
-    },
-    "start": "2025-06-20T00:00:00-04:00",
-    "end": "2025-07-05T23:59:59-04:00"
   },
   {
     "name": "Summer of Making",
@@ -114,6 +38,44 @@
     "end": "2025-08-31T23:59:59-04:00"
   },
   {
+    "name": "Rewind",
+    "id": "rewind",
+    "status": "active",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a desktop app, Get stickers, artifacts + Headphones!",
+    "ys": "A Desktop App",
+    "ws": "Stickers, artifacts + super cool headphones from KOSS!",
+    "extern": {
+      "website": "http://rewind.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C093ALFAW8K",
+        "name": "rewind"
+      }
+    },
+    "start": "2025-07-12T00:00:00-04:00",
+    "end": "2025-08-12T23:59:59-04:00"
+  },
+  {
+    "name": "Terminal Craft",
+    "id": "terminal-craft",
+    "status": "active",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build and publish your own terminal program and earn a $60 grant for hackable electronics!",
+    "ys": "Terminal Program",
+    "ws": "$60 for RPI/hackable electronics!",
+    "extern": {
+      "website": "https://terminalcraft.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C08F58MT3GV",
+        "name": "terminal-craft"
+      }
+    },
+    "start": "2025-07-14T00:00:00-04:00",
+    "end": "2025-08-10T23:59:59-04:00"
+  },
+  {
     "name": "Silicon",
     "id": "silicon",
     "status": "active",
@@ -133,61 +95,23 @@
     "end": "2025-08-06T23:59:59"
   },
   {
-    "name": "Decode",
-    "id": "decode",
+    "name": "Reinforced",
+    "id": "reinforced",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Learn how a tech product works (hardware + software) and we ship you a grant to make it yourself!",
-    "ys": "Understanding of a tech product",
-    "ws": "A grant to make it yourself!",
+    "description": "Build a game, build a bot to beat it, get compute to do more AI stuff.",
+    "ys": "A game and a bot to beat it",
+    "ws": "AI Credits to do more AI stuff",
     "extern": {
-      "website": "https://decode.hackclub.dev",
+      "website": "http://reinforced.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C091GPYCAFL",
-        "name": "decode"
-      }
-    },
-    "start": "2025-06-24T00:00:00-04:00",
-    "end": "2025-07-09T23:59:59-04:00"
-  },
-  {
-    "name": "Converge",
-    "id": "converge",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build bots, win prizes",
-    "ys": "Discord/Slack/Telegram/Signal Bot",
-    "ws": "Multiple Prizes",
-    "extern": {
-      "website": "https://converge.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C091UF79VDM",
-        "name": "converge"
-      }
-    },
-    "start": "2025-06-24T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
-  },
-  {
-    "name": "Twist",
-    "id": "twist",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Make an esolang, get stickers and a $40 electronics grant.",
-    "ys": "An esolang",
-    "ws": "Stickers and a $40 electronics grant",
-    "extern": {
-      "website": "https://twist.hackclub.dev",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C092A93FA4X",
-        "name": "twist-ysws"
+        "link": "https://hackclub.slack.com/archives/C092JUZ7V7Y",
+        "name": "reactive"
       }
     },
     "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-14T23:59:59-04:00"
+    "end": "2025-07-16T23:59:59-04:00"
   },
   {
     "name": "Gamefolio",
@@ -228,42 +152,99 @@
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
-    "name": "Reinforced",
-    "id": "reinforced",
+    "name": "Thunder",
+    "id": "thunder",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a game, build a bot to beat it, get compute to do more AI stuff.",
-    "ys": "A game and a bot to beat it",
-    "ws": "AI Credits to do more AI stuff",
+    "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
+    "ys": "A Slack bot",
+    "ws": "A limited edition Orpheus bucket hat",
     "extern": {
-      "website": "http://reinforced.hackclub.dev",
+      "website": null,
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C092JUZ7V7Y",
-        "name": "reactive"
+        "link": "https://hackclub.slack.com/archives/C06V2GEV3MY",
+        "name": "thunder"
       }
     },
-    "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-16T23:59:59-04:00"
+    "start": "2025-05-16T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
   },
   {
-    "name": "Illumination",
-    "id": "illumination",
+    "name": "Converge",
+    "id": "converge",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build an IOT device, get everything you need to have it running!",
-    "ys": "A program that runs on an ESP32, a backend that connects to your ESP32, and a website to control your ESP32 and backend.",
-    "ws": "A cool ESP32-S3 based devboard, hardware parts you choose, and cloud credits to run your backend with.",
+    "description": "Build bots, win prizes",
+    "ys": "Discord/Slack/Telegram/Signal Bot",
+    "ws": "Multiple Prizes",
     "extern": {
-      "website": "https://illumination.hackclub.com",
+      "website": "https://converge.hackclub.com",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C091MS57D37",
-        "name": "illumination"
+        "link": "https://hackclub.slack.com/archives/C091UF79VDM",
+        "name": "converge"
+      }
+    },
+    "start": "2025-06-24T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
+  },
+  {
+    "name": "Twist",
+    "id": "twist",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Make an esolang, get stickers and a $40 electronics grant.",
+    "ys": "An esolang",
+    "ws": "Stickers and a $40 electronics grant",
+    "extern": {
+      "website": "https://twist.hackclub.dev",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C092A93FA4X",
+        "name": "twist-ysws"
       }
     },
     "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-10T23:59:59-04:00"
+    "end": "2025-07-14T23:59:59-04:00"
+  },
+  {
+    "name": "Dockerize",
+    "id": "dockerize",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a self-hosted application using Docker, we ship you stickers and a chance to win a ZimaBoard.",
+    "ys": "A Dockerized Application",
+    "ws": "Stickers and a chance to win a ZimaBoard.",
+    "extern": {
+      "website": "https://dockerize.hackclub.com/",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C092D9HARSQ",
+        "name": "dockerize"
+      }
+    },
+    "start": "2025-06-20T00:00:00-04:00",
+    "end": "2025-07-11T23:59:59-04:00"
+  },
+  {
+    "name": "Toolsmith",
+    "id": "toolsmith",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
+    "ys": "An MCP tool",
+    "ws": "$10 of AI credits",
+    "extern": {
+      "website": "https://toolsmith.hackclub.com/",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
+        "name": "toolsmith"
+      }
+    },
+    "start": "2025-07-09T00:00:00-04:00",
+    "end": "2025-07-11T23:59:59-04:00"
   },
   {
     "name": "Pulse",
@@ -285,80 +266,42 @@
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
-    "name": "Pathfinder",
-    "id": "pathfinder",
+    "name": "Illumination",
+    "id": "illumination",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
-    "ys": "A custom PCB controller board and efidget",
-    "ws": "Grants and materials to build it!",
+    "description": "Build an IOT device, get everything you need to have it running!",
+    "ys": "A program that runs on an ESP32, a backend that connects to your ESP32, and a website to control your ESP32 and backend.",
+    "ws": "A cool ESP32-S3 based devboard, hardware parts you choose, and cloud credits to run your backend with.",
     "extern": {
-      "website": "https://pathfinder.hackclub.com",
+      "website": "https://illumination.hackclub.com",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
-        "name": "pathfinder"
+        "link": "https://hackclub.slack.com/archives/C091MS57D37",
+        "name": "illumination"
       }
     },
-    "start": "2025-06-28T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
+    "start": "2025-06-25T00:00:00-04:00",
+    "end": "2025-07-10T23:59:59-04:00"
   },
   {
-    "name": "Rewind",
-    "id": "rewind",
+    "name": "Decode",
+    "id": "decode",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a desktop app, Get stickers, artifacts + Headphones!",
-    "ys": "A Desktop App",
-    "ws": "Stickers, artifacts + super cool headphones from KOSS!",
+    "description": "Learn how a tech product works (hardware + software) and we ship you a grant to make it yourself!",
+    "ys": "Understanding of a tech product",
+    "ws": "A grant to make it yourself!",
     "extern": {
-      "website": "http://rewind.hackclub.com",
+      "website": "https://decode.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C093ALFAW8K",
-        "name": "rewind"
+        "link": "https://hackclub.slack.com/archives/C091GPYCAFL",
+        "name": "decode"
       }
     },
-    "start": "2025-06-28T00:00:00-04:00",
-    "end": "2025-07-08T23:59:59-04:00"
-  },
-  {
-    "name": "Anansi",
-    "id": "anansi",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a web scraper, upload your dataset to Kaggle, Get a comic book!",
-    "ys": "A Web Scraper",
-    "ws": "A comic book!",
-    "extern": {
-      "website": "https://anansi.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C094J1QDU72",
-        "name": "anansi"
-      }
-    },
-    "start": "2025-07-02T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
-  },
-  {
-    "name": "Cinema",
-    "id": "cinema",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Make a short story JavaScript animation using canvas, Get HQ-made caramel popcorn! (card grants for international folks)",
-    "ys": "JavaScript Canvas Animation",
-    "ws": "Popcorn",
-    "extern": {
-      "website": "https://cinema.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C0936AVS683",
-        "name": "cinema"
-      }
-    },
-    "start": "2025-07-02T00:00:00-04:00",
-    "end": "2025-07-07T11:59:59-04:00"
+    "start": "2025-06-24T00:00:00-04:00",
+    "end": "2025-07-09T23:59:59-04:00"
   },
   {
     "name": "Extensify",
@@ -380,22 +323,79 @@
     "end": "2025-07-07T23:59:59-04:00"
   },
   {
-    "name": "Toolsmith",
-    "id": "toolsmith",
+    "name": "Cinema",
+    "id": "cinema",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
-    "ys": "An MCP tool",
-    "ws": "$10 of AI credits",
+    "description": "Make a short story JavaScript animation using canvas, Get HQ-made caramel popcorn! (card grants for international folks)",
+    "ys": "JavaScript Canvas Animation",
+    "ws": "Popcorn",
     "extern": {
-      "website": "https://toolsmith.hackclub.com/",
+      "website": "https://cinema.hackclub.com",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
-        "name": "toolsmith"
+        "link": "https://hackclub.slack.com/archives/C0936AVS683",
+        "name": "cinema"
       }
     },
-    "start": "2025-07-09T00:00:00-04:00",
-    "end": "2025-07-11T23:59:59-04:00"
+    "start": "2025-07-02T00:00:00-04:00",
+    "end": "2025-07-07T11:59:59-04:00"
+  },
+  {
+    "name": "Reactive",
+    "id": "reactive",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Ship a website built with React, get $15 to buy a domain.",
+    "ys": "A website built with React",
+    "ws": "$15 to buy a domain",
+    "extern": {
+      "website": "http://reactive.hackclub.dev",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C090S7Q2HT4",
+        "name": "reactive"
+      }
+    },
+    "start": "2025-06-20T00:00:00-04:00",
+    "end": "2025-07-05T23:59:59-04:00"
+  },
+  {
+    "name": "Anansi",
+    "id": "anansi",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a web scraper, upload your dataset to Kaggle, Get a comic book!",
+    "ys": "A Web Scraper",
+    "ws": "A comic book!",
+    "extern": {
+      "website": "https://anansi.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C094J1QDU72",
+        "name": "anansi"
+      }
+    },
+    "start": "2025-07-02T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
+  },
+  {
+    "name": "Pathfinder",
+    "id": "pathfinder",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
+    "ys": "A custom PCB controller board and efidget",
+    "ws": "Grants and materials to build it!",
+    "extern": {
+      "website": "https://pathfinder.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
+        "name": "pathfinder"
+      }
+    },
+    "start": "2025-06-28T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
   }
 ]
