@@ -198,7 +198,7 @@
 
 <Application
   id="xcode"
-  className="bg-zinc-900 overflow-hidden text-zinc-100 border border-zinc-700/50 rounded-2xl shadow-2xl max-w-3xl mx-auto "
+  className="bg-zinc-900 overflow-hidden text-zinc-100 border border-zinc-700/50 rounded-2xl shadow-2xl mx-auto "
 >
   <div class="p-8 space-y-8">
     {#if isLoading}
