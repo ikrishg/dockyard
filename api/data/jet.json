@@ -1,0 +1,22 @@
+{
+  "name": "Jet",
+  "type": "flagship",
+  "draft": false,
+  "description": "Get travel stipends just by programming!",
+  "ys": "Tracked Hours of Code",
+  "ws": "Travel Stipends!",
+  "extern": {
+    "website": "https://jet.hackclub.com/",
+    "slack": {
+      "link": "https://hackclub.slack.com/archives/C09640ENTS7",
+      "name": "jet"
+    }
+  },
+  "timeline": [
+    {
+      "start": "2025-07-17T00:00:00-04:00",
+      "end": "2025-08-21T23:59:59-04:00"
+    }
+  ],
+  "ships": []
+}
