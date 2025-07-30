@@ -25,6 +25,7 @@
 
     Draggable.create(windowElement, {
       inertia: true,
+      trigger: windowElement.querySelector("header"),
       bounds: document.getElementById("main"),
       allowEventDefault: true,
       onClick: () => {
