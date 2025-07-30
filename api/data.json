@@ -114,25 +114,6 @@
     "end": "2025-07-16T23:59:59-04:00"
   },
   {
-    "name": "Converge",
-    "id": "converge",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build bots, win prizes",
-    "ys": "Discord/Slack/Telegram/Signal Bot",
-    "ws": "Multiple Prizes",
-    "extern": {
-      "website": "https://converge.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C091UF79VDM",
-        "name": "converge"
-      }
-    },
-    "start": "2025-06-24T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
-  },
-  {
     "name": "Gamefolio",
     "id": "gamefolio",
     "status": "inactive",
@@ -190,6 +171,25 @@
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
+    "name": "Converge",
+    "id": "converge",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build bots, win prizes",
+    "ys": "Discord/Slack/Telegram/Signal Bot",
+    "ws": "Multiple Prizes",
+    "extern": {
+      "website": "https://converge.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C091UF79VDM",
+        "name": "converge"
+      }
+    },
+    "start": "2025-06-24T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
+  },
+  {
     "name": "Twist",
     "id": "twist",
     "status": "inactive",
@@ -207,25 +207,6 @@
     },
     "start": "2025-06-25T00:00:00-04:00",
     "end": "2025-07-14T23:59:59-04:00"
-  },
-  {
-    "name": "Pulse",
-    "id": "pulse",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
-    "ys": "A project using the Spotify API",
-    "ws": "3 months of Spotify Premium",
-    "extern": {
-      "website": "https://pulse.hackclub.dev",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
-        "name": "pulse-ysws"
-      }
-    },
-    "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-11T23:59:59-04:00"
   },
   {
     "name": "Dockerize",
@@ -263,6 +244,25 @@
       }
     },
     "start": "2025-07-09T00:00:00-04:00",
+    "end": "2025-07-11T23:59:59-04:00"
+  },
+  {
+    "name": "Pulse",
+    "id": "pulse",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
+    "ys": "A project using the Spotify API",
+    "ws": "3 months of Spotify Premium",
+    "extern": {
+      "website": "https://pulse.hackclub.dev",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
+        "name": "pulse-ysws"
+      }
+    },
+    "start": "2025-06-25T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -361,25 +361,6 @@
     "end": "2025-07-05T23:59:59-04:00"
   },
   {
-    "name": "Pathfinder",
-    "id": "pathfinder",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
-    "ys": "A custom PCB controller board and efidget",
-    "ws": "Grants and materials to build it!",
-    "extern": {
-      "website": "https://pathfinder.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
-        "name": "pathfinder"
-      }
-    },
-    "start": "2025-06-28T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
-  },
-  {
     "name": "Anansi",
     "id": "anansi",
     "status": "inactive",
@@ -396,6 +377,25 @@
       }
     },
     "start": "2025-07-02T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
+  },
+  {
+    "name": "Pathfinder",
+    "id": "pathfinder",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
+    "ys": "A custom PCB controller board and efidget",
+    "ws": "Grants and materials to build it!",
+    "extern": {
+      "website": "https://pathfinder.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
+        "name": "pathfinder"
+      }
+    },
+    "start": "2025-06-28T00:00:00-04:00",
     "end": "2025-07-04T23:59:59-04:00"
   }
 ]
