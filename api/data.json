@@ -1,5 +1,24 @@
 [
   {
+    "name": "Terminal Craft",
+    "id": "terminal-craft",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build and publish your own terminal program and earn a $60 grant for hackable electronics!",
+    "ys": "Terminal Program",
+    "ws": "$60 for RPI/hackable electronics!",
+    "extern": {
+      "website": "https://terminalcraft.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C08F58MT3GV",
+        "name": "terminal-craft"
+      }
+    },
+    "start": "2025-02-28T00:00:00-04:00",
+    "end": "2025-03-19T23:59:59-04:00"
+  },
+  {
     "name": "Thunder",
     "id": "thunder",
     "status": "inactive",
@@ -378,24 +397,5 @@
     },
     "start": "2025-07-09T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
-  },
-  {
-    "name": "Terminal Craft",
-    "id": "terminal-craft",
-    "status": "active",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build and publish your own terminal program and earn a $60 grant for hackable electronics!",
-    "ys": "Terminal Program",
-    "ws": "$60 for RPI/hackable electronics!",
-    "extern": {
-      "website": "https://terminalcraft.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C08F58MT3GV",
-        "name": "terminal-craft"
-      }
-    },
-    "start": "2025-07-14T00:00:00-04:00",
-    "end": "2025-08-10T23:59:59-04:00"
   }
 ]
