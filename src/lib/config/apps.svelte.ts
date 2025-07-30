@@ -1,7 +1,6 @@
 import { writable } from "svelte/store";
 import finderImage from "$/assets/finder.png";
 import musicImage from "$/assets/music.png";
-import settingsImage from "$/assets/settings.png";
 import xcodeImage from "$/assets/xcode.png";
 import clockImage from "$/assets/clock.png";
 
@@ -11,6 +10,7 @@ export interface App {
   icon: string;
   isOpen: boolean;
   inDock: boolean;
+  onDesktop: boolean;
 }
 
 type AppsState = Record<string, App>;
@@ -22,27 +22,15 @@ const initialApps: AppsState = {
     icon: finderImage,
     isOpen: false,
     inDock: true,
+    onDesktop: false,
   },
   music: {
     name: "Music",
     id: "music",
     icon: musicImage,
     isOpen: false,
-    inDock: true,
-  },
-  settings: {
-    name: "Settings",
-    id: "settings",
-    icon: settingsImage,
-    isOpen: false,
     inDock: false,
-  },
-  xcode: {
-    name: "Xcode",
-    id: "xcode",
-    icon: xcodeImage,
-    isOpen: false,
-    inDock: true,
+    onDesktop: true,
   },
   clock: {
     name: "Clock",
@@ -50,6 +38,15 @@ const initialApps: AppsState = {
     icon: clockImage,
     isOpen: false,
     inDock: true,
+    onDesktop: false,
+  },
+  xcode: {
+    name: "Xcode",
+    id: "xcode",
+    icon: xcodeImage,
+    isOpen: false,
+    inDock: true,
+    onDesktop: false,
   },
 };
 
