@@ -3,6 +3,7 @@ description: Use this template to add a new/edit existing program in the reposit
 
 title: "[gh-automator] Program: "
 labels: ["gh-automator"]
+assignees: ["kkrishguptaa"]
 
 body:
   - type: markdown
