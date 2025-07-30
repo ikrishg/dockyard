@@ -57,6 +57,25 @@
     "end": "2025-08-12T23:59:59-04:00"
   },
   {
+    "name": "Endpointer",
+    "id": "endpointer",
+    "status": "active",
+    "type": "ysws",
+    "draft": false,
+    "description": "Ship a REST API with proper documentation on Swagger (OpenAPI), and we ship a grant for Cloud Credits / Raspberry Pi up to $40",
+    "ys": "REST API with documentation",
+    "ws": "Cloud Credits / RPI ($40)",
+    "extern": {
+      "website": "https://endpointer.hackclub.com/",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C097M5JRT7F",
+        "name": "endpointer"
+      }
+    },
+    "start": "2025-07-30T00:00:00-04:00",
+    "end": "2025-08-12T23:59:59-04:00"
+  },
+  {
     "name": "Terminal Craft",
     "id": "terminal-craft",
     "status": "active",
