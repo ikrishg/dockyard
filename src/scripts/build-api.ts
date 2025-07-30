@@ -6,9 +6,11 @@ import { apiSchema } from "../utils/api-schema";
 function makeAPIData(id: string, content: string) {
   const data = dataSchema.parse(content);
 
-  const currentTimeline = data.timeline.sort(
-    (a, b) => new Date(a.start).getTime() - new Date(b.start).getTime()
-  )[0];
+  const currentTimeline = data.timeline.reduce((prev, curr) => {
+    const prevStart = new Date(prev.start).getTime();
+    const currStart = new Date(curr.start).getTime();
+    return currStart > prevStart ? curr : prev;
+  }, data.timeline[0]);
 
   const active =
     new Date(currentTimeline.start) <= new Date() &&
@@ -47,7 +49,11 @@ const ysws = files
   })
   .filter((data) => data.draft === false)
   .sort((a, b) => {
-    return new Date(a.start).getTime() - new Date(b.start).getTime();
+    if (a.status === b.status) {
+      return new Date(b.end).getTime() - new Date(a.end).getTime();
+    }
+
+    return a.status === "active" ? -1 : 1; // Active programs first
   });
 
 const apiFilePath = path.join(process.cwd(), "api", "data.json");
