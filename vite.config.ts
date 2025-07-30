@@ -8,5 +8,10 @@ export default defineConfig({
 		tailwindcss(),
 		sveltekit(),
 		devtoolsJson()
-	]
+	],
+  ssr: {
+    noExternal: [
+      'bits-ui'
+    ]
+  }
 });

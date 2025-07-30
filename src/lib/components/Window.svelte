@@ -5,7 +5,6 @@
   import InertiaPlugin from "gsap/InertiaPlugin";
   import { onMount } from "svelte";
   import { minimize } from "../config/apps.svelte";
-  import { cubicIn, cubicOut, quintIn, quintOut } from "svelte/easing";
   import type { Snippet } from "svelte";
   import { fade, scale } from "svelte/transition";
 

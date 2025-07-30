@@ -25,7 +25,7 @@
     id: "",
     name: "",
     type: "ysws",
-    draft: true,
+    draft: false,
     description: "",
     ys: "",
     ws: "",
@@ -159,6 +159,8 @@
       const value = formData[field.id];
       if (field.type === "checkbox") {
         url.searchParams.set(field.id, value ? '"true"' : '"false"');
+      } else if ((field.id = "type")) {
+        url.searchParams.set(field.id, `"${value}"`);
       } else {
         url.searchParams.set(field.id, String(value ?? ""));
       }

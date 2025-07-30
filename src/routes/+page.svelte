@@ -5,6 +5,10 @@
   import Clock from "$/lib/components/Clock.svelte";
 </script>
 
+<svelte:head>
+  <title>Dockyard</title>
+  <meta name="description" content="The Yard where YSWS Dock." />
+</svelte:head>
 <XCode />
 <Music />
 <Finder />
