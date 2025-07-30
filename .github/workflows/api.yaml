@@ -42,7 +42,7 @@ jobs:
         uses: devops-infra/action-commit-push@master
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
-          commit_message: "chore: update API build [skip ci]"
+          commit_message: "chore: update API build"
           target_branch: api-build-${{ github.run_id }}
 
       - name: Check if branch exists
