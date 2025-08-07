@@ -135,7 +135,7 @@
   {
     "name": "Silicon",
     "id": "silicon",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Design your own custom devboard and we'll fund it.",
