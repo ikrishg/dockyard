@@ -190,25 +190,6 @@
     "end": "2025-07-16T23:59:59-04:00"
   },
   {
-    "name": "Gamefolio",
-    "id": "gamefolio",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
-    "ys": "A portfolio site with a game theme",
-    "ws": "$20 grant for domains or hosting",
-    "extern": {
-      "website": "https://gamefolio.hackclub.dev",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C08RT4C2485",
-        "name": "gamefolio"
-      }
-    },
-    "start": "2025-06-25T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
-  },
-  {
     "name": "Thunder",
     "id": "thunder",
     "status": "inactive",
@@ -247,6 +228,25 @@
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
+    "name": "Gamefolio",
+    "id": "gamefolio",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
+    "ys": "A portfolio site with a game theme",
+    "ws": "$20 grant for domains or hosting",
+    "extern": {
+      "website": "https://gamefolio.hackclub.dev",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C08RT4C2485",
+        "name": "gamefolio"
+      }
+    },
+    "start": "2025-06-25T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
+  },
+  {
     "name": "Twist",
     "id": "twist",
     "status": "inactive",
@@ -266,22 +266,22 @@
     "end": "2025-07-14T23:59:59-04:00"
   },
   {
-    "name": "Dockerize",
-    "id": "dockerize",
+    "name": "Pulse",
+    "id": "pulse",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a self-hosted application using Docker, we ship you stickers and a chance to win a ZimaBoard.",
-    "ys": "A Dockerized Application",
-    "ws": "Stickers and a chance to win a ZimaBoard.",
+    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
+    "ys": "A project using the Spotify API",
+    "ws": "3 months of Spotify Premium",
     "extern": {
-      "website": "https://dockerize.hackclub.com/",
+      "website": "https://pulse.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C092D9HARSQ",
-        "name": "dockerize"
+        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
+        "name": "pulse-ysws"
       }
     },
-    "start": "2025-06-20T00:00:00-04:00",
+    "start": "2025-06-25T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -304,22 +304,22 @@
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
-    "name": "Pulse",
-    "id": "pulse",
+    "name": "Dockerize",
+    "id": "dockerize",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
-    "ys": "A project using the Spotify API",
-    "ws": "3 months of Spotify Premium",
+    "description": "Build a self-hosted application using Docker, we ship you stickers and a chance to win a ZimaBoard.",
+    "ys": "A Dockerized Application",
+    "ws": "Stickers and a chance to win a ZimaBoard.",
     "extern": {
-      "website": "https://pulse.hackclub.dev",
+      "website": "https://dockerize.hackclub.com/",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
-        "name": "pulse-ysws"
+        "link": "https://hackclub.slack.com/archives/C092D9HARSQ",
+        "name": "dockerize"
       }
     },
-    "start": "2025-06-25T00:00:00-04:00",
+    "start": "2025-06-20T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -418,25 +418,6 @@
     "end": "2025-07-05T23:59:59-04:00"
   },
   {
-    "name": "Anansi",
-    "id": "anansi",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a web scraper, upload your dataset to Kaggle, Get a comic book!",
-    "ys": "A Web Scraper",
-    "ws": "A comic book!",
-    "extern": {
-      "website": "https://anansi.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C094J1QDU72",
-        "name": "anansi"
-      }
-    },
-    "start": "2025-07-02T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
-  },
-  {
     "name": "Pathfinder",
     "id": "pathfinder",
     "status": "inactive",
@@ -453,6 +434,25 @@
       }
     },
     "start": "2025-06-28T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
+  },
+  {
+    "name": "Anansi",
+    "id": "anansi",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a web scraper, upload your dataset to Kaggle, Get a comic book!",
+    "ys": "A Web Scraper",
+    "ws": "A comic book!",
+    "extern": {
+      "website": "https://anansi.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C094J1QDU72",
+        "name": "anansi"
+      }
+    },
+    "start": "2025-07-02T00:00:00-04:00",
     "end": "2025-07-04T23:59:59-04:00"
   }
 ]
