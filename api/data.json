@@ -116,7 +116,7 @@
   {
     "name": "Terminal Craft",
     "id": "terminal-craft",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Build and publish your own terminal program and earn a $60 grant for hackable electronics!",
