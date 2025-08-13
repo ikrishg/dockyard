@@ -78,7 +78,7 @@
   {
     "name": "Rewind",
     "id": "rewind",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Build a desktop app, Get stickers, artifacts + Headphones!",
@@ -97,7 +97,7 @@
   {
     "name": "Endpointer",
     "id": "endpointer",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Ship a REST API with proper documentation on Swagger (OpenAPI), and we ship a grant for Cloud Credits / Raspberry Pi up to $40",
