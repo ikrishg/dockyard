@@ -59,7 +59,7 @@
   {
     "name": "Dummies",
     "id": "dummies",
-    "status": "active",
+    "status": "inactive",
     "type": "ysws",
     "draft": false,
     "description": "Learn A New programming language, and build a project with it and Get a Book",
