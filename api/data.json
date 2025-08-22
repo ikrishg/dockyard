@@ -40,7 +40,7 @@
   {
     "name": "Jet",
     "id": "jet",
-    "status": "active",
+    "status": "inactive",
     "type": "flagship",
     "draft": false,
     "description": "Get travel stipends just by programming!",
