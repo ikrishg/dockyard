@@ -20,14 +20,14 @@
     "gh-automator": "bun run src/scripts/gh-automator.ts"
   },
   "devDependencies": {
-    "@eslint/compat": "1.3.2",
+    "@eslint/compat": "1.4.0",
     "@eslint/js": "9.36.0",
     "@github/issue-parser": "2.0.0",
     "@internationalized/date": "3.9.0",
-    "@lucide/svelte": "0.515.0",
+    "@lucide/svelte": "0.544.0",
     "@octokit/rest": "22.0.0",
     "@sveltejs/adapter-static": "3.0.9",
-    "@sveltejs/kit": "2.42.2",
+    "@sveltejs/kit": "2.43.1",
     "@sveltejs/vite-plugin-svelte": "6.2.0",
     "@tailwindcss/typography": "0.5.18",
     "@tailwindcss/vite": "4.1.13",
@@ -51,8 +51,8 @@
     "tailwindcss": "4.1.13",
     "tw-animate-css": "1.3.8",
     "typescript": "5.9.2",
-    "typescript-eslint": "8.44.0",
-    "vite": "7.0.7",
+    "typescript-eslint": "8.44.1",
+    "vite": "7.1.7",
     "vite-plugin-devtools-json": "1.0.0"
   },
   "dependencies": {
