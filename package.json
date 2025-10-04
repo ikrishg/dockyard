@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@eslint/compat": "1.4.0",
-    "@eslint/js": "9.36.0",
+    "@eslint/js": "9.37.0",
     "@github/issue-parser": "2.0.0",
     "@internationalized/date": "3.10.0",
     "@lucide/svelte": "0.544.0",
@@ -36,7 +36,7 @@
     "@types/frappe-gantt": "0.9.0",
     "bits-ui": "2.11.4",
     "clsx": "2.1.1",
-    "eslint": "9.36.0",
+    "eslint": "9.37.0",
     "eslint-plugin-svelte": "3.12.4",
     "formsnap": "2.0.1",
     "frappe-gantt": "1.0.3",
