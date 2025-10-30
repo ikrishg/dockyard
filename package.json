@@ -20,7 +20,7 @@
     "gh-automator": "bun run src/scripts/gh-automator.ts"
   },
   "devDependencies": {
-    "@eslint/compat": "1.4.0",
+    "@eslint/compat": "1.4.1",
     "@eslint/js": "9.38.0",
     "@github/issue-parser": "2.0.0",
     "@internationalized/date": "3.10.0",
