@@ -24,7 +24,7 @@
     "@eslint/js": "9.39.1",
     "@github/issue-parser": "2.0.0",
     "@internationalized/date": "3.10.0",
-    "@lucide/svelte": "0.554.0",
+    "@lucide/svelte": "0.555.0",
     "@octokit/rest": "22.0.1",
     "@sveltejs/adapter-static": "3.0.10",
     "@sveltejs/kit": "2.49.0",
