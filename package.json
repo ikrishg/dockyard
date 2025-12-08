@@ -37,7 +37,7 @@
     "bits-ui": "2.14.4",
     "clsx": "2.1.1",
     "eslint": "9.39.1",
-    "eslint-plugin-svelte": "3.13.0",
+    "eslint-plugin-svelte": "3.13.1",
     "formsnap": "2.0.1",
     "frappe-gantt": "1.0.4",
     "globals": "16.5.0",
