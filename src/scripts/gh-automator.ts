@@ -14,7 +14,7 @@ const DATA_DIR = path.join(process.cwd(), "api", "data");
 
 export async function getIssueAndData() {
   if (!process.env.GITHUB_ISSUE) {
-    // kkrishguptaa/dockyard#123
+    // ikrishg/dockyard#123
     throw new Error("GITHUB_ISSUE environment variable is not set.");
   }
 
