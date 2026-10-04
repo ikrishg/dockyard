@@ -24,7 +24,7 @@
       class="inline-block bg-white/70 dark:bg-black/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-md shadow-md"
     >
       <a
-        href="https://github.com/kkrishguptaa/dockyard"
+        href="https://github.com/ikrishg/dockyard"
         target="_blank"
         rel="noopener noreferrer"
         class="block"
