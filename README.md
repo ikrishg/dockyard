@@ -1,5 +1,5 @@
 <div align="center">
-<div><img src="https://github.com/kkrishguptaa/dockyard/raw/main/src/assets/icon.svg" alt="Dockyard logo" width="96" height="96"></div>
+<div><img src="https://github.com/ikrishg/dockyard/raw/main/src/assets/icon.svg" alt="Dockyard logo" width="96" height="96"></div>
 <h1>Dockyard</h1>
 <p>The Yard where YSWS Dock.</p>
 </div>
@@ -47,7 +47,7 @@ To run the Dockyard locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/kkrishguptaa/dockyard
+   git clone https://github.com/ikrishg/dockyard
    cd dockyard
    ```
 
