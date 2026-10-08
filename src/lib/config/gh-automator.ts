@@ -2,7 +2,7 @@ import { dataSchema } from "$/utils/data-schema";
 import { z } from "zod";
 
 export const gitHubIssueBaseUrl = new URL(
-  "https://github.com/kkrishguptaa/dockyard/issues/new?template=gh-automator.yaml"
+  "https://github.com/ikrishg/dockyard/issues/new?template=gh-automator.yaml"
 );
 
 export const issueSchema = z.object({
