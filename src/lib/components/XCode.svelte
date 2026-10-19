@@ -159,14 +159,14 @@
       const value = formData[field.id];
       if (field.type === "checkbox") {
         url.searchParams.set(field.id, value ? '"true"' : '"false"');
-      } else if ((field.id = "type")) {
+      } else if (field.id === "type") {
         url.searchParams.set(field.id, `"${value}"`);
       } else {
         url.searchParams.set(field.id, String(value ?? ""));
       }
     });
 
-    const formattedTimeline = formData.timeline.map((entry, idx) => {
+    const formattedTimeline = formData.timeline.map((entry) => {
       let start = entry.start;
       let end = entry.end;
 
@@ -256,7 +256,7 @@
               class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
             >
               <option value="">Select a Program</option>
-              {#each programs as prog}
+              {#each programs as prog (prog.id)}
                 <option value={prog.id}>{prog.name}</option>
               {/each}
             </select>
@@ -264,7 +264,7 @@
         {/if}
 
         {#if mode === "new" || (mode === "edit" && formData.id)}
-          {#each formFields as field}
+          {#each formFields as field (field.id)}
             {#if field.type === "checkbox"}
               <div class="flex items-center space-x-3">
                 <input
@@ -291,7 +291,7 @@
                     bind:value={formData[field.id]}
                     class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
                   >
-                    {#each field.options as opt}
+                    {#each field.options as opt (opt)}
                       <option value={opt}>{opt}</option>
                     {/each}
                   </select>
@@ -330,12 +330,12 @@
                 bind:value={timezone}
                 class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
               >
-                {#each timezoneOptions as tz}
+                {#each timezoneOptions as tz (tz)}
                   <option value={tz}>{tz}</option>
                 {/each}
               </select>
             </div>
-            {#each formData.timeline as entry, index}
+            {#each formData.timeline as entry, index (index)}
               <div
                 class="grid gap-2 items-end"
                 class:grid-cols-3={formData.timeline.length > 1}
@@ -348,7 +348,7 @@
                   <input
                     id="start-{index}"
                     type="datetime-local"
-                    bind:value={formData.timeline[index].start}
+                    bind:value={entry.start}
                     class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
                   />
                 </div>
@@ -359,7 +359,7 @@
                   <input
                     id="end-{index}"
                     type="datetime-local"
-                    bind:value={formData.timeline[index].end}
+                    bind:value={entry.end}
                     class="w-full px-3 py-2 rounded-md bg-zinc-800 border border-zinc-600 text-zinc-100 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
                   />
                 </div>
