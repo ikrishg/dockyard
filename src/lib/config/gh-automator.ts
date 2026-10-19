@@ -45,3 +45,63 @@ export const issueSchema = z.object({
 });
 
 export type IssueData = z.infer<typeof issueSchema>;
+
+/** Format timeline entries for the gh-automator issue `timeline` query param. */
+export function formatIssueTimeline(
+  timeline: IssueData["timeline"],
+  timezone: string
+): IssueData["timeline"] {
+  return timeline.map((entry) => {
+    let start = entry.start;
+    let end = entry.end;
+
+    if (!start.includes("T")) {
+      start = `${start}T00:00:00${timezone}`;
+    } else {
+      start = `${start}:00${timezone}`;
+    }
+    if (!end.includes("T")) {
+      end = `${end}T23:59:59${timezone}`;
+    } else {
+      end = `${end}:59${timezone}`;
+    }
+    return { start, end };
+  });
+}
+
+/**
+ * Build a GitHub new-issue URL with query params that match
+ * `.github/ISSUE_TEMPLATE/gh-automator.yaml` field ids and dropdown option values.
+ */
+export function buildGitHubIssuePrefillUrl(
+  data: IssueData,
+  timezone: string
+): string {
+  const url = new URL(gitHubIssueBaseUrl.toString());
+
+  if (data.id.length > 0) {
+    url.searchParams.set("id", data.id);
+  } else {
+    url.searchParams.set(
+      "id",
+      data.name.replace(/[^a-z0-9]+/gi, "-").toLowerCase()
+    );
+  }
+
+  url.searchParams.set("name", data.name);
+  url.searchParams.set("draft", data.draft ? "true" : "false");
+  url.searchParams.set("type", data.type);
+  url.searchParams.set("description", data.description);
+  url.searchParams.set("ys", data.ys);
+  url.searchParams.set("ws", data.ws);
+  url.searchParams.set("slack-link", data["slack-link"]);
+  url.searchParams.set("slack-name", data["slack-name"]);
+  url.searchParams.set("website", data.website ?? "");
+
+  url.searchParams.set(
+    "timeline",
+    JSON.stringify(formatIssueTimeline(data.timeline, timezone))
+  );
+
+  return url.toString();
+}

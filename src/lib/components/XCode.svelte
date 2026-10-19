@@ -10,7 +10,7 @@
   } from "../config/api";
   import Application from "./Application.svelte";
   import {
-    gitHubIssueBaseUrl,
+    buildGitHubIssuePrefillUrl,
     issueSchema,
     type IssueData,
   } from "$/lib/config/gh-automator";
@@ -21,7 +21,16 @@
   let programs = $state<DataListElement[]>([]);
   let selectedProgramId = $state("");
 
-  const blankFormData: IssueData = {
+  type TimelineFormEntry = { key: string; start: string; end: string };
+  type FormState = Omit<IssueData, "timeline"> & {
+    timeline: TimelineFormEntry[];
+  };
+
+  function newTimelineEntry(start = "", end = ""): TimelineFormEntry {
+    return { key: crypto.randomUUID(), start, end };
+  }
+
+  const blankFormData: FormState = {
     id: "",
     name: "",
     type: "ysws",
@@ -32,7 +41,7 @@
     website: null,
     "slack-link": "https://hackclub.slack.com/archives/",
     "slack-name": "channel-name",
-    timeline: [{ start: "", end: "" }],
+    timeline: [newTimelineEntry()],
   };
   // timezone options for timeline entries
   const timezoneOptions = [
@@ -65,7 +74,7 @@
     "+14:00",
   ];
   let timezone = $state<string>("-04:00");
-  let formData = $state<IssueData>({ ...blankFormData });
+  let formData = $state<FormState>({ ...blankFormData });
 
   type Field =
     | {
@@ -108,7 +117,10 @@
   });
 
   function resetForm(type: "new" | "edit" | "choose") {
-    formData = { ...blankFormData };
+    formData = {
+      ...blankFormData,
+      timeline: [newTimelineEntry()],
+    };
     selectedProgramId = "";
     mode = type;
   }
@@ -122,11 +134,10 @@
       .then((json: DataItem) => {
         // convert ISO timestamps to date-only strings for date inputs
         // convert ISO timestamps to datetime-local strings (YYYY-MM-DDTHH:mm)
-        const timelineEntries = json.timeline.map((e) => ({
-          start: e.start.slice(0, 16),
-          end: e.end.slice(0, 16),
-        }));
-        formData = issueSchema.parse({
+        const timelineEntries = json.timeline.map((e) =>
+          newTimelineEntry(e.start.slice(0, 16), e.end.slice(0, 16))
+        );
+        const parsed = issueSchema.parse({
           id,
           name: json.name,
           type: [json.type],
@@ -137,8 +148,9 @@
           website: json.extern.website,
           "slack-link": json.extern.slack.link,
           "slack-name": json.extern.slack.name,
-          timeline: timelineEntries,
+          timeline: timelineEntries.map(({ start, end }) => ({ start, end })),
         });
+        formData = { ...parsed, timeline: timelineEntries };
       })
       .catch((error) => {
         console.error("Error fetching program data:", error);
@@ -146,49 +158,19 @@
   }
 
   function handleSave() {
-    const url = new URL(gitHubIssueBaseUrl.toString());
-    if (formData.id.length > 0) {
-      url.searchParams.set("id", formData.id);
-    } else {
-      url.searchParams.set(
-        "id",
-        formData.name.replace(/[^a-z0-9]+/gi, "-").toLowerCase()
-      );
-    }
-    formFields.forEach((field) => {
-      const value = formData[field.id];
-      if (field.type === "checkbox") {
-        url.searchParams.set(field.id, value ? '"true"' : '"false"');
-      } else if (field.id === "type") {
-        url.searchParams.set(field.id, `"${value}"`);
-      } else {
-        url.searchParams.set(field.id, String(value ?? ""));
-      }
-    });
-
-    const formattedTimeline = formData.timeline.map((entry) => {
-      let start = entry.start;
-      let end = entry.end;
-
-      if (!start.includes("T")) {
-        start = `${start}T00:00:00${timezone}`;
-      } else {
-        start = `${start}:00${timezone}`;
-      }
-      if (!end.includes("T")) {
-        end = `${end}T23:59:59${timezone}`;
-      } else {
-        end = `${end}:59${timezone}`;
-      }
-      return { start, end };
-    });
-    url.searchParams.set("timeline", JSON.stringify(formattedTimeline));
-
-    window.open(url.toString(), "_blank");
+    const { timeline, ...issueFields } = formData;
+    const url = buildGitHubIssuePrefillUrl(
+      {
+        ...issueFields,
+        timeline: timeline.map(({ start, end }) => ({ start, end })),
+      },
+      timezone
+    );
+    window.open(url, "_blank");
   }
 
   function addTimeline() {
-    formData.timeline = [...formData.timeline, { start: "", end: "" }];
+    formData.timeline = [...formData.timeline, newTimelineEntry()];
   }
 
   function removeTimeline(index: number) {
@@ -335,7 +317,7 @@
                 {/each}
               </select>
             </div>
-            {#each formData.timeline as entry, index (index)}
+            {#each formData.timeline as entry, index (entry.key)}
               <div
                 class="grid gap-2 items-end"
                 class:grid-cols-3={formData.timeline.length > 1}
