@@ -82,7 +82,7 @@
           <div
             class="flex items-center space-x-1 bg-zinc-800/50 p-1 rounded-md"
           >
-            {#each types as dataType}
+            {#each types as dataType (dataType)}
               <button
                 class={clsx(
                   "px-2 py-0.5 text-xs rounded transition-colors flex-shrink-0",
@@ -104,7 +104,7 @@
           <div
             class="flex items-center space-x-1 bg-zinc-800/50 p-1 rounded-md"
           >
-            {#each statuses as status}
+            {#each statuses as status (status)}
               <button
                 class={clsx(
                   "px-2 py-0.5 text-xs rounded transition-colors flex-shrink-0",
@@ -131,7 +131,7 @@
             >
               Type
             </div>
-            {#each types as dataType, index}
+            {#each types as dataType, index (dataType)}
               <button
                 class={clsx(
                   "w-full text-left px-2 py-1 text-sm rounded transition-colors",
@@ -159,7 +159,7 @@
             >
               Status
             </div>
-            {#each statuses as status, index}
+            {#each statuses as status, index (status)}
               <button
                 class={clsx(
                   "w-full text-left px-2 py-1 text-sm rounded transition-colors",

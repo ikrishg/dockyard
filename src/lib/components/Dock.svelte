@@ -18,7 +18,7 @@
       "*:hover:scale-125 *:hover:-translate-y-2.5 *:transition-transform"
     )}
   >
-    {#each Object.values($apps).filter((a) => a.inDock) as app}
+    {#each Object.values($apps).filter((a) => a.inDock) as app (app.id)}
       <li>
         <button onclick={() => open(app.id)}>
           <img src={app.icon} alt={app.name} width={50} height={50} />
