@@ -76,25 +76,6 @@
     "end": "2025-08-14T23:59:59-04:00"
   },
   {
-    "name": "Rewind",
-    "id": "rewind",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a desktop app, Get stickers, artifacts + Headphones!",
-    "ys": "A Desktop App",
-    "ws": "Stickers, artifacts + super cool headphones from KOSS!",
-    "extern": {
-      "website": "http://rewind.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C093ALFAW8K",
-        "name": "rewind"
-      }
-    },
-    "start": "2025-07-12T00:00:00-04:00",
-    "end": "2025-08-12T23:59:59-04:00"
-  },
-  {
     "name": "Endpointer",
     "id": "endpointer",
     "status": "inactive",
@@ -111,6 +92,25 @@
       }
     },
     "start": "2025-07-30T00:00:00-04:00",
+    "end": "2025-08-12T23:59:59-04:00"
+  },
+  {
+    "name": "Rewind",
+    "id": "rewind",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a desktop app, Get stickers, artifacts + Headphones!",
+    "ys": "A Desktop App",
+    "ws": "Stickers, artifacts + super cool headphones from KOSS!",
+    "extern": {
+      "website": "http://rewind.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C093ALFAW8K",
+        "name": "rewind"
+      }
+    },
+    "start": "2025-07-12T00:00:00-04:00",
     "end": "2025-08-12T23:59:59-04:00"
   },
   {
@@ -190,25 +190,6 @@
     "end": "2025-07-16T23:59:59-04:00"
   },
   {
-    "name": "Converge",
-    "id": "converge",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build bots, win prizes",
-    "ys": "Discord/Slack/Telegram/Signal Bot",
-    "ws": "Multiple Prizes",
-    "extern": {
-      "website": "https://converge.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C091UF79VDM",
-        "name": "converge"
-      }
-    },
-    "start": "2025-06-24T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
-  },
-  {
     "name": "Thunder",
     "id": "thunder",
     "status": "inactive",
@@ -247,6 +228,25 @@
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
+    "name": "Converge",
+    "id": "converge",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build bots, win prizes",
+    "ys": "Discord/Slack/Telegram/Signal Bot",
+    "ws": "Multiple Prizes",
+    "extern": {
+      "website": "https://converge.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C091UF79VDM",
+        "name": "converge"
+      }
+    },
+    "start": "2025-06-24T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
+  },
+  {
     "name": "Twist",
     "id": "twist",
     "status": "inactive",
@@ -266,25 +266,6 @@
     "end": "2025-07-14T23:59:59-04:00"
   },
   {
-    "name": "Dockerize",
-    "id": "dockerize",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a self-hosted application using Docker, we ship you stickers and a chance to win a ZimaBoard.",
-    "ys": "A Dockerized Application",
-    "ws": "Stickers and a chance to win a ZimaBoard.",
-    "extern": {
-      "website": "https://dockerize.hackclub.com/",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C092D9HARSQ",
-        "name": "dockerize"
-      }
-    },
-    "start": "2025-06-20T00:00:00-04:00",
-    "end": "2025-07-11T23:59:59-04:00"
-  },
-  {
     "name": "Toolsmith",
     "id": "toolsmith",
     "status": "inactive",
@@ -301,6 +282,25 @@
       }
     },
     "start": "2025-07-09T00:00:00-04:00",
+    "end": "2025-07-11T23:59:59-04:00"
+  },
+  {
+    "name": "Dockerize",
+    "id": "dockerize",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a self-hosted application using Docker, we ship you stickers and a chance to win a ZimaBoard.",
+    "ys": "A Dockerized Application",
+    "ws": "Stickers and a chance to win a ZimaBoard.",
+    "extern": {
+      "website": "https://dockerize.hackclub.com/",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C092D9HARSQ",
+        "name": "dockerize"
+      }
+    },
+    "start": "2025-06-20T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
