@@ -76,25 +76,6 @@
     "end": "2025-08-14T23:59:59-04:00"
   },
   {
-    "name": "Endpointer",
-    "id": "endpointer",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Ship a REST API with proper documentation on Swagger (OpenAPI), and we ship a grant for Cloud Credits / Raspberry Pi up to $40",
-    "ys": "REST API with documentation",
-    "ws": "Cloud Credits / RPI ($40)",
-    "extern": {
-      "website": "https://endpointer.hackclub.com/",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C097M5JRT7F",
-        "name": "endpointer"
-      }
-    },
-    "start": "2025-07-30T00:00:00-04:00",
-    "end": "2025-08-12T23:59:59-04:00"
-  },
-  {
     "name": "Rewind",
     "id": "rewind",
     "status": "inactive",
@@ -111,6 +92,25 @@
       }
     },
     "start": "2025-07-12T00:00:00-04:00",
+    "end": "2025-08-12T23:59:59-04:00"
+  },
+  {
+    "name": "Endpointer",
+    "id": "endpointer",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Ship a REST API with proper documentation on Swagger (OpenAPI), and we ship a grant for Cloud Credits / Raspberry Pi up to $40",
+    "ys": "REST API with documentation",
+    "ws": "Cloud Credits / RPI ($40)",
+    "extern": {
+      "website": "https://endpointer.hackclub.com/",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C097M5JRT7F",
+        "name": "endpointer"
+      }
+    },
+    "start": "2025-07-30T00:00:00-04:00",
     "end": "2025-08-12T23:59:59-04:00"
   },
   {
@@ -266,22 +266,22 @@
     "end": "2025-07-14T23:59:59-04:00"
   },
   {
-    "name": "Toolsmith",
-    "id": "toolsmith",
+    "name": "Pulse",
+    "id": "pulse",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
-    "ys": "An MCP tool",
-    "ws": "$10 of AI credits",
+    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
+    "ys": "A project using the Spotify API",
+    "ws": "3 months of Spotify Premium",
     "extern": {
-      "website": "https://toolsmith.hackclub.com/",
+      "website": "https://pulse.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
-        "name": "toolsmith"
+        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
+        "name": "pulse-ysws"
       }
     },
-    "start": "2025-07-09T00:00:00-04:00",
+    "start": "2025-06-25T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -304,22 +304,22 @@
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
-    "name": "Pulse",
-    "id": "pulse",
+    "name": "Toolsmith",
+    "id": "toolsmith",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
-    "ys": "A project using the Spotify API",
-    "ws": "3 months of Spotify Premium",
+    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
+    "ys": "An MCP tool",
+    "ws": "$10 of AI credits",
     "extern": {
-      "website": "https://pulse.hackclub.dev",
+      "website": "https://toolsmith.hackclub.com/",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
-        "name": "pulse-ysws"
+        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
+        "name": "toolsmith"
       }
     },
-    "start": "2025-06-25T00:00:00-04:00",
+    "start": "2025-07-09T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -418,25 +418,6 @@
     "end": "2025-07-05T23:59:59-04:00"
   },
   {
-    "name": "Pathfinder",
-    "id": "pathfinder",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
-    "ys": "A custom PCB controller board and efidget",
-    "ws": "Grants and materials to build it!",
-    "extern": {
-      "website": "https://pathfinder.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
-        "name": "pathfinder"
-      }
-    },
-    "start": "2025-06-28T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
-  },
-  {
     "name": "Anansi",
     "id": "anansi",
     "status": "inactive",
@@ -453,6 +434,25 @@
       }
     },
     "start": "2025-07-02T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
+  },
+  {
+    "name": "Pathfinder",
+    "id": "pathfinder",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
+    "ys": "A custom PCB controller board and efidget",
+    "ws": "Grants and materials to build it!",
+    "extern": {
+      "website": "https://pathfinder.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
+        "name": "pathfinder"
+      }
+    },
+    "start": "2025-06-28T00:00:00-04:00",
     "end": "2025-07-04T23:59:59-04:00"
   }
 ]
