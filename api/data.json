@@ -190,25 +190,6 @@
     "end": "2025-07-16T23:59:59-04:00"
   },
   {
-    "name": "Thunder",
-    "id": "thunder",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
-    "ys": "A Slack bot",
-    "ws": "A limited edition Orpheus bucket hat",
-    "extern": {
-      "website": null,
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C06V2GEV3MY",
-        "name": "thunder"
-      }
-    },
-    "start": "2025-05-16T00:00:00-04:00",
-    "end": "2025-07-15T23:59:59-04:00"
-  },
-  {
     "name": "Gamefolio",
     "id": "gamefolio",
     "status": "inactive",
@@ -247,6 +228,25 @@
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
+    "name": "Thunder",
+    "id": "thunder",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
+    "ys": "A Slack bot",
+    "ws": "A limited edition Orpheus bucket hat",
+    "extern": {
+      "website": null,
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C06V2GEV3MY",
+        "name": "thunder"
+      }
+    },
+    "start": "2025-05-16T00:00:00-04:00",
+    "end": "2025-07-15T23:59:59-04:00"
+  },
+  {
     "name": "Twist",
     "id": "twist",
     "status": "inactive",
@@ -266,22 +266,22 @@
     "end": "2025-07-14T23:59:59-04:00"
   },
   {
-    "name": "Pulse",
-    "id": "pulse",
+    "name": "Toolsmith",
+    "id": "toolsmith",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
-    "ys": "A project using the Spotify API",
-    "ws": "3 months of Spotify Premium",
+    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
+    "ys": "An MCP tool",
+    "ws": "$10 of AI credits",
     "extern": {
-      "website": "https://pulse.hackclub.dev",
+      "website": "https://toolsmith.hackclub.com/",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
-        "name": "pulse-ysws"
+        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
+        "name": "toolsmith"
       }
     },
-    "start": "2025-06-25T00:00:00-04:00",
+    "start": "2025-07-09T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -304,22 +304,22 @@
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
-    "name": "Toolsmith",
-    "id": "toolsmith",
+    "name": "Pulse",
+    "id": "pulse",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
-    "ys": "An MCP tool",
-    "ws": "$10 of AI credits",
+    "description": "Build a project using the Spotify API with 6 hours on Hackatime, get 3 months of Spotify Premium.",
+    "ys": "A project using the Spotify API",
+    "ws": "3 months of Spotify Premium",
     "extern": {
-      "website": "https://toolsmith.hackclub.com/",
+      "website": "https://pulse.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
-        "name": "toolsmith"
+        "link": "https://hackclub.slack.com/archives/C090E7XUEA3",
+        "name": "pulse-ysws"
       }
     },
-    "start": "2025-07-09T00:00:00-04:00",
+    "start": "2025-06-25T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -418,25 +418,6 @@
     "end": "2025-07-05T23:59:59-04:00"
   },
   {
-    "name": "Anansi",
-    "id": "anansi",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a web scraper, upload your dataset to Kaggle, Get a comic book!",
-    "ys": "A Web Scraper",
-    "ws": "A comic book!",
-    "extern": {
-      "website": "https://anansi.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C094J1QDU72",
-        "name": "anansi"
-      }
-    },
-    "start": "2025-07-02T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
-  },
-  {
     "name": "Pathfinder",
     "id": "pathfinder",
     "status": "inactive",
@@ -453,6 +434,25 @@
       }
     },
     "start": "2025-06-28T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
+  },
+  {
+    "name": "Anansi",
+    "id": "anansi",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a web scraper, upload your dataset to Kaggle, Get a comic book!",
+    "ys": "A Web Scraper",
+    "ws": "A comic book!",
+    "extern": {
+      "website": "https://anansi.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C094J1QDU72",
+        "name": "anansi"
+      }
+    },
+    "start": "2025-07-02T00:00:00-04:00",
     "end": "2025-07-04T23:59:59-04:00"
   }
 ]
