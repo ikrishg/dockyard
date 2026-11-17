@@ -190,22 +190,22 @@
     "end": "2025-07-16T23:59:59-04:00"
   },
   {
-    "name": "Thunder",
-    "id": "thunder",
+    "name": "Gamefolio",
+    "id": "gamefolio",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
-    "ys": "A Slack bot",
-    "ws": "A limited edition Orpheus bucket hat",
+    "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
+    "ys": "A portfolio site with a game theme",
+    "ws": "$20 grant for domains or hosting",
     "extern": {
-      "website": null,
+      "website": "https://gamefolio.hackclub.dev",
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C06V2GEV3MY",
-        "name": "thunder"
+        "link": "https://hackclub.slack.com/archives/C08RT4C2485",
+        "name": "gamefolio"
       }
     },
-    "start": "2025-05-16T00:00:00-04:00",
+    "start": "2025-06-25T00:00:00-04:00",
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
@@ -228,22 +228,22 @@
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
-    "name": "Gamefolio",
-    "id": "gamefolio",
+    "name": "Thunder",
+    "id": "thunder",
     "status": "inactive",
     "type": "ysws",
     "draft": false,
-    "description": "You Ship: Make your portfolio site in the style of your favorite game\nWe Ship: $20 grant card which can be spent on either domains or hosting.",
-    "ys": "A portfolio site with a game theme",
-    "ws": "$20 grant for domains or hosting",
+    "description": "You Ship A Slack bot. We Ship A limited edition Orpheus bucket hat.",
+    "ys": "A Slack bot",
+    "ws": "A limited edition Orpheus bucket hat",
     "extern": {
-      "website": "https://gamefolio.hackclub.dev",
+      "website": null,
       "slack": {
-        "link": "https://hackclub.slack.com/archives/C08RT4C2485",
-        "name": "gamefolio"
+        "link": "https://hackclub.slack.com/archives/C06V2GEV3MY",
+        "name": "thunder"
       }
     },
-    "start": "2025-06-25T00:00:00-04:00",
+    "start": "2025-05-16T00:00:00-04:00",
     "end": "2025-07-15T23:59:59-04:00"
   },
   {
@@ -285,25 +285,6 @@
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
-    "name": "Toolsmith",
-    "id": "toolsmith",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
-    "ys": "An MCP tool",
-    "ws": "$10 of AI credits",
-    "extern": {
-      "website": "https://toolsmith.hackclub.com/",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
-        "name": "toolsmith"
-      }
-    },
-    "start": "2025-07-09T00:00:00-04:00",
-    "end": "2025-07-11T23:59:59-04:00"
-  },
-  {
     "name": "Dockerize",
     "id": "dockerize",
     "status": "inactive",
@@ -320,6 +301,25 @@
       }
     },
     "start": "2025-06-20T00:00:00-04:00",
+    "end": "2025-07-11T23:59:59-04:00"
+  },
+  {
+    "name": "Toolsmith",
+    "id": "toolsmith",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Build a AI extension (MCP tool), get $10 of AI credits.",
+    "ys": "An MCP tool",
+    "ws": "$10 of AI credits",
+    "extern": {
+      "website": "https://toolsmith.hackclub.com/",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C094X38BFT5",
+        "name": "toolsmith"
+      }
+    },
+    "start": "2025-07-09T00:00:00-04:00",
     "end": "2025-07-11T23:59:59-04:00"
   },
   {
@@ -418,25 +418,6 @@
     "end": "2025-07-05T23:59:59-04:00"
   },
   {
-    "name": "Pathfinder",
-    "id": "pathfinder",
-    "status": "inactive",
-    "type": "ysws",
-    "draft": false,
-    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
-    "ys": "A custom PCB controller board and efidget",
-    "ws": "Grants and materials to build it!",
-    "extern": {
-      "website": "https://pathfinder.hackclub.com",
-      "slack": {
-        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
-        "name": "pathfinder"
-      }
-    },
-    "start": "2025-06-28T00:00:00-04:00",
-    "end": "2025-07-04T23:59:59-04:00"
-  },
-  {
     "name": "Anansi",
     "id": "anansi",
     "status": "inactive",
@@ -453,6 +434,25 @@
       }
     },
     "start": "2025-07-02T00:00:00-04:00",
+    "end": "2025-07-04T23:59:59-04:00"
+  },
+  {
+    "name": "Pathfinder",
+    "id": "pathfinder",
+    "status": "inactive",
+    "type": "ysws",
+    "draft": false,
+    "description": "Make a custom PCB controller board and efidget, get grants and materials to build it!",
+    "ys": "A custom PCB controller board and efidget",
+    "ws": "Grants and materials to build it!",
+    "extern": {
+      "website": "https://pathfinder.hackclub.com",
+      "slack": {
+        "link": "https://hackclub.slack.com/archives/C0943DE80E4",
+        "name": "pathfinder"
+      }
+    },
+    "start": "2025-06-28T00:00:00-04:00",
     "end": "2025-07-04T23:59:59-04:00"
   }
 ]
